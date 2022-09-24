@@ -13,7 +13,7 @@ def fraction_to_string(data):
 
 
 def piece_to_csv(file_name):
-  path = os.path.join("pieces", file_name)
+  path = os.path.join("midi_pieces", file_name)
   piece = converter.parse(path)
   file = [x for x in piece.parts[0].flat.stripTies()]
 
@@ -46,7 +46,7 @@ def piece_to_csv(file_name):
 
 
 
-path = os.path.join("pieces")
+path = os.path.join("midi_pieces")
 pieces_list = []
 
 # Iterate directory

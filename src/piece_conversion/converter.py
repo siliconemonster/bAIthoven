@@ -35,12 +35,12 @@ def piece_to_csv(file_name):
           info = ['r', fraction_to_string(element.offset), fraction_to_string(element.quarterLength)]
           components.append(info)
 
-
   csv_name = file_name[:-4] +'.csv'
   if not os.path.isdir('csvs'):
       os.mkdir('csvs')
   csv_path = os.path.join('csvs', csv_name)
-  with open(csv_path, 'w') as f:
+  
+  with open(csv_path, 'w', newline='') as f:
       write = csv.writer(f)
       write.writerows(components)
 

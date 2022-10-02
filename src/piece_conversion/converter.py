@@ -11,6 +11,13 @@ def fraction_to_string(data):
   else: result = data
   return result
 
+def string_to_fraction(data):
+  if '/' in data:
+    slash_position = data.find('/')
+    
+    result = Fraction(int(data[0:slash_position]), int(data[slash_position+1:]))
+  else: result = data
+  return result
 
 def piece_to_csv(file_name):
   path = os.path.join("midi_pieces", file_name)
@@ -22,17 +29,17 @@ def piece_to_csv(file_name):
   for element in file:
       
       if type(element)==note.Note:
-          info = [element.pitch.midi, fraction_to_string(element.offset), fraction_to_string(element.quarterLength)]
+          info = [element.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
           components.append(info)
             
       elif type(element)==chord.Chord:
           chord_notes = element.notes
           for i in chord_notes:
-              info = [i.pitch.midi, fraction_to_string(element.offset), fraction_to_string(element.quarterLength)]
+              info = [i.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
               components.append(info)
           
       elif type(element)==note.Rest:     
-          info = ['r', fraction_to_string(element.offset), fraction_to_string(element.quarterLength)]
+          info = ['r', fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
           components.append(info)
 
   csv_name = file_name[:-4] +'.csv'
@@ -43,6 +50,29 @@ def piece_to_csv(file_name):
   with open(csv_path, 'w', newline='') as f:
       write = csv.writer(f)
       write.writerows(components)
+
+def csv_to_piece():
+  final_piece_csv = os.path.join("outcome_csv.csv")
+
+  final_piece_score = stream.Score(id='mainScore')
+
+  final_piece_score_part0 = stream.Part(id='part0')
+
+  with open(final_piece_csv) as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+      if row[0] == 'r':
+        this_note = note.Rest()
+      else:
+        this_note = note.Note(int(row[0]))
+      this_note.offset = float(string_to_fraction(row[1]))
+      this_note.quarterLength = float(string_to_fraction(row[2]))
+
+      final_piece_score_part0.append(this_note)
+
+  final_piece_score.insert(0,final_piece_score_part0)
+
+  final_piece_score.write('musicxml', 'outcome.mxl')
 
 
 
@@ -58,3 +88,5 @@ pieces_list.sort()
 
 for file in pieces_list:
   piece_to_csv(file)
+
+csv_to_piece()

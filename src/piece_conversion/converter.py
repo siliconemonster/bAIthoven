@@ -51,6 +51,22 @@ def piece_to_csv(file_name):
       write = csv.writer(f)
       write.writerows(components)
 
+def csv_to_string(csvs_list):
+  all_sonatas_string = ''
+
+  for a_csv_file in csvs_list:
+    file_path = "csvs/" + a_csv_file
+    with open(file_path) as csv_file:
+      csv_reader = csv.reader(csv_file, delimiter=',')
+      for row in csv_reader:
+        for i in range(len(row)):
+          all_sonatas_string += row[i]
+          all_sonatas_string += ','
+  
+  all_sonatas_string = all_sonatas_string[:-1]
+  return all_sonatas_string
+
+
 def csv_to_piece():
   final_piece_csv = os.path.join("outcome_csv.csv")
 
@@ -75,18 +91,33 @@ def csv_to_piece():
   final_piece_score.write('musicxml', 'outcome.mxl')
 
 
-
-path = os.path.join("midi_pieces")
+# ----- Creating CSV files -----
+midi_path = os.path.join("midi_pieces")
 pieces_list = []
 
 # Iterate directory
-for file in os.listdir(path):
+for file in os.listdir(midi_path):
     # check if current path is a file
-    if os.path.isfile(os.path.join(path, file)) and '.mid' in file:
+    if os.path.isfile(os.path.join(midi_path, file)) and '.mid' in file:
         pieces_list.append(file)
 pieces_list.sort()
 
 for file in pieces_list:
   piece_to_csv(file)
 
+# ----- Converting CSV files into a long string -----
+csvs_path = os.path.join("csvs")
+csvs_list = []
+
+# Iterate directory
+for file in os.listdir(csvs_path):
+    # check if current path is a file
+    if os.path.isfile(os.path.join(csvs_path, file)) and '.csv' in file:
+        csvs_list.append(file)
+csvs_list.sort()
+
+all_sonatas_string = csv_to_string(csvs_list)
+print(all_sonatas_string)
+
+# ----- Creating MXL file from prediction -----
 csv_to_piece()

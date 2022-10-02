@@ -1,6 +1,5 @@
 from fractions import Fraction
 from music21 import *
-import re
 import csv
 import os
 

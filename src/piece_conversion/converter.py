@@ -21,8 +21,8 @@ def string_to_fraction(data):
 def piece_to_csv(file_name):
   path = os.path.join("midi_pieces", file_name)
   piece = converter.parse(path)
-  for i in range(len(piece.parts)):
-    file = [x for x in piece.parts[i].flat.stripTies()]
+
+  file = [x for x in piece.parts[0].flat.stripTies()]
 
   components = []
 
@@ -37,7 +37,7 @@ def piece_to_csv(file_name):
           for i in chord_notes:
               info = [i.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
               components.append(info)
-          
+            
       elif type(element)==note.Rest:     
           info = ['r', fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
           components.append(info)
@@ -81,18 +81,17 @@ def csv_to_piece():
         this_note = note.Rest()
       else:
         this_note = note.Note(int(row[0]))
-      this_note.offset = float(string_to_fraction(row[1]))
-      this_note.quarterLength = float(string_to_fraction(row[2]))
+      this_note.quarterLength = float(string_to_fraction(row[1]))
+      this_note.offset = float(string_to_fraction(row[2]))
 
       final_piece_score_part0.append(this_note)
 
   final_piece_score.insert(0,final_piece_score_part0)
-  print(final_piece_score)
+
   final_piece_score.write('musicxml', 'outcome.mxl')
-  print('hi')
 
 
-'''# ----- Creating CSV files -----
+# ----- Creating CSV files -----
 midi_path = os.path.join("midi_pieces")
 pieces_list = []
 
@@ -118,7 +117,7 @@ for file in os.listdir(csvs_path):
 csvs_list.sort()
 
 all_sonatas_string = csv_to_string(csvs_list)
-print(all_sonatas_string)'''
+print(all_sonatas_string)
 
 # ----- Creating MXL file from prediction -----
 csv_to_piece()

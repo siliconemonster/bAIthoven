@@ -22,25 +22,27 @@ def piece_to_csv(file_name):
   path = os.path.join("midi_pieces", file_name)
   piece = converter.parse(path)
 
-  file = [x for x in piece.parts[0].flat.stripTies()]
-
   components = []
 
-  for element in file:
-      
-      if type(element)==note.Note:
-          info = [element.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
-          components.append(info)
-            
-      elif type(element)==chord.Chord:
-          chord_notes = element.notes
-          for i in chord_notes:
-              info = [i.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
-              components.append(info)
-            
-      elif type(element)==note.Rest:     
-          info = ['r', fraction_to_string(element.quarterLength), fraction_to_string(element.offset)]
-          components.append(info)
+  for channel in range(len(piece.parts)):
+    print(channel)
+    file = [x for x in piece.parts[channel].flat.stripTies()]
+
+    for element in file:
+        
+        if type(element)==note.Note:
+            info = [element.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset), channel]
+            components.append(info)
+              
+        elif type(element)==chord.Chord:
+            chord_notes = element.notes
+            for i in chord_notes:
+                info = [i.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset), channel]
+                components.append(info)
+              
+        elif type(element)==note.Rest:     
+            info = ['r', fraction_to_string(element.quarterLength), fraction_to_string(element.offset), channel]
+            components.append(info)
 
   csv_name = file_name[:-4] +'.csv'
   if not os.path.isdir('csvs'):
@@ -105,7 +107,7 @@ pieces_list.sort()
 for file in pieces_list:
   piece_to_csv(file)
 
-# ----- Converting CSV files into a long string -----
+'''# ----- Converting CSV files into a long string -----
 csvs_path = os.path.join("csvs")
 csvs_list = []
 
@@ -120,4 +122,4 @@ all_sonatas_string = csv_to_string(csvs_list)
 print(all_sonatas_string)
 
 # ----- Creating MXL file from prediction -----
-csv_to_piece()
+csv_to_piece()'''

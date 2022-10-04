@@ -25,7 +25,6 @@ def piece_to_csv(file_name):
   components = []
 
   for channel in range(len(piece.parts)):
-    print(channel)
     file = [x for x in piece.parts[channel].flat.stripTies()]
 
     for element in file:
@@ -74,26 +73,34 @@ def csv_to_piece():
 
   final_piece_score = stream.Score(id='mainScore')
 
-  final_piece_score_part0 = stream.Part(id='part0')
-
+  channel_list = []
   with open(final_piece_csv) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    for row in csv_reader:
-      if row[0] == 'r':
-        this_note = note.Rest()
-      else:
-        this_note = note.Note(int(row[0]))
-      this_note.quarterLength = float(string_to_fraction(row[1]))
-      this_note.offset = float(string_to_fraction(row[2]))
+      csv_reader = csv.reader(csv_file, delimiter=',')
+      for row in csv_reader:
+        channel_list.append(row[3])
 
-      final_piece_score_part0.append(this_note)
+  for part in range(len(set(channel_list))):
+    final_piece_score_part = stream.Part(id='part{}'.format(part))
 
-  final_piece_score.insert(0,final_piece_score_part0)
+    with open(final_piece_csv) as csv_file:
+      csv_reader = csv.reader(csv_file, delimiter=',')
+      for row in csv_reader:
+        if row[3] == str(part):
+          if row[0] == 'r':
+            this_note = note.Rest()
+          else:
+            this_note = note.Note(int(row[0]))
+          this_note.quarterLength = float(string_to_fraction(row[1]))
+          this_note.offset = float(string_to_fraction(row[2]))
+
+          final_piece_score_part.append(this_note)
+
+    final_piece_score.insert(part,final_piece_score_part)
 
   final_piece_score.write('musicxml', 'outcome.mxl')
 
 
-# ----- Creating CSV files -----
+'''# ----- Creating CSV files -----
 midi_path = os.path.join("midi_pieces")
 pieces_list = []
 
@@ -107,7 +114,7 @@ pieces_list.sort()
 for file in pieces_list:
   piece_to_csv(file)
 
-'''# ----- Converting CSV files into a long string -----
+# ----- Converting CSV files into a long string -----
 csvs_path = os.path.join("csvs")
 csvs_list = []
 
@@ -119,7 +126,7 @@ for file in os.listdir(csvs_path):
 csvs_list.sort()
 
 all_sonatas_string = csv_to_string(csvs_list)
-print(all_sonatas_string)
+print(all_sonatas_string)'''
 
 # ----- Creating MXL file from prediction -----
-csv_to_piece()'''
+csv_to_piece()

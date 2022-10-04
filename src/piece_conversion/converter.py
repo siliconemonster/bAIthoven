@@ -84,12 +84,29 @@ def csv_to_piece():
 
     with open(final_piece_csv) as csv_file:
       csv_reader = csv.reader(csv_file, delimiter=',')
-      for row in csv_reader:
+
+      csv_into_list = list(csv_reader)
+      for idx, row in enumerate(csv_into_list):
         if row[3] == str(part):
+
           if row[0] == 'r':
             this_note = note.Rest()
+
+          elif idx != 0 and row[2] == csv_into_list[(idx-1)][2]:
+            continue
+          elif row[2] == csv_into_list[(idx+1)][2] and csv_into_list[(idx+1)][0] != 'r' and idx != len(csv_into_list):
+            chords = []
+            chords.append(int(row[0]))
+            while row[2] == csv_into_list[(idx+1)][2]:
+              if csv_into_list[(idx+1)][0] == 'r':
+                break
+              chords.append(int(csv_into_list[(idx+1)][0]))
+              idx = idx+1
+            this_note = chord.Chord(chords)
+          
           else:
             this_note = note.Note(int(row[0]))
+
           this_note.quarterLength = float(string_to_fraction(row[1]))
           this_note.offset = float(string_to_fraction(row[2]))
 
@@ -100,7 +117,7 @@ def csv_to_piece():
   final_piece_score.write('musicxml', 'outcome.mxl')
 
 
-'''# ----- Creating CSV files -----
+# ----- Creating CSV files -----
 midi_path = os.path.join("midi_pieces")
 pieces_list = []
 
@@ -126,7 +143,7 @@ for file in os.listdir(csvs_path):
 csvs_list.sort()
 
 all_sonatas_string = csv_to_string(csvs_list)
-print(all_sonatas_string)'''
+print(all_sonatas_string)
 
 # ----- Creating MXL file from prediction -----
 csv_to_piece()

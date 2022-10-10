@@ -15,7 +15,7 @@ def string_to_fraction(data):
     slash_position = data.find('/')
     
     result = Fraction(int(data[0:slash_position]), int(data[slash_position+1:]))
-  else: result = data
+  else: result = float(data)
   return result
 
 def piece_to_csv(file_name):
@@ -35,11 +35,19 @@ def piece_to_csv(file_name):
               
         elif type(element)==chord.Chord:
             chord_notes = element.notes
-            for i in chord_notes:
-                info = [i.pitch.midi, fraction_to_string(element.quarterLength), fraction_to_string(element.offset), channel]
-                components.append(info)
+            
+            current_offset = Fraction(element.offset)
+
+            for index, item in enumerate(chord_notes):
+              if item == chord_notes[1]:
+                info = [item.pitch.midi, fraction_to_string(Fraction(1,len(chord_notes))), fraction_to_string(current_offset), channel]
+                current_offset = current_offset + Fraction(1,len(chord_notes))
+
+              else:  
+                info = [item.pitch.midi, fraction_to_string(item.quarterLength), fraction_to_string(item.offset), channel]
+              components.append(info)
               
-        elif type(element)==note.Rest:     
+        elif type(element)==note.Rest:
             info = ['r', fraction_to_string(element.quarterLength), fraction_to_string(element.offset), channel]
             components.append(info)
 
@@ -107,8 +115,8 @@ def csv_to_piece():
           else:
             this_note = note.Note(int(row[0]))
 
-          this_note.quarterLength = float(string_to_fraction(row[1]))
-          this_note.offset = float(string_to_fraction(row[2]))
+          this_note.quarterLength = string_to_fraction(row[1])
+          this_note.offset = string_to_fraction(row[2])
 
           final_piece_score_part.append(this_note)
 

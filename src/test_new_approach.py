@@ -11,8 +11,6 @@ def read_from_csv(path):
   with open(path, newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
-
-    print(data)
     
     whole_list = []
 
@@ -29,7 +27,6 @@ def read_from_csv(path):
           row.append(eval(element))
       whole_list.append(row)
 
-    whole_list[0][2] = float(whole_list[0][2])
     return whole_list
 
 def separate_tuplets(raw_tuplet):
@@ -119,7 +116,7 @@ def prepare_for_learning(whole_list):
     else:
       no_tuplets_list.append(event)
 
-  print(no_tuplets_list)
+  #print(no_tuplets_list)
 
   no_chords_list = []
   for event in no_tuplets_list:
@@ -130,23 +127,23 @@ def prepare_for_learning(whole_list):
     else:
       no_chords_list.append(event)
 
-  print(no_chords_list)
+  #print(no_chords_list)
 
   return no_chords_list
 
 def prepare_for_rebuilding(no_chords_list):
   chords_list = rejoin_chords(no_chords_list)
-  print(chords_list)
+  #print(chords_list)
 
   rebuilt_list = rejoin_tuplets(chords_list)
-  print(rebuilt_list)
+  #print(rebuilt_list)
 
   return rebuilt_list
 
 path_to_read = os.path.join('converted_sonates','csv_file.csv')
 
 sonate = read_from_csv(path_to_read)
-print(sonate)
+#print(sonate)
 outcome = prepare_for_learning(sonate)
 
 prepare_for_rebuilding(outcome)

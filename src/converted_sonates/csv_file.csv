@@ -1,0 +1,7 @@
+0.0,Tempo,30.0
+0.0,Tonalidade,E- major
+0.0,Formula de Compasso,2/4
+0.0,Note,Parte_1,1.0,60,
+0.0,Rest,Parte_4,2.0,0,
+2.0,Chord,Parte_1,1.0,"[55, 58]",
+3.0,Tuplet 3:2,Parte_1,"[['Chord', 0.25, [48, 56], None], ['Note', 0.25, 51, None], ['Note', 0.25, 56, None]]"

@@ -21,6 +21,8 @@ def read_from_csv(path):
       for index, element in enumerate(event):
         if index == 1 or index == 2:
           row.append(element)
+        elif index == 5 and element != '':
+          row.append(element)
         elif element == '':
           row.append(None)
         else:

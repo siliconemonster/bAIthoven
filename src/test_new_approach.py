@@ -140,11 +140,11 @@ def prepare_for_rebuilding(no_chords_list):
 
   return rebuilt_list
 
-path_to_read = os.path.join('converted_sonates','csv_file.csv')
+'''path_to_read = os.path.join('converted_sonates','csv_file.csv')
 
 sonate = read_from_csv(path_to_read)
 #print(sonate)
 outcome = prepare_for_learning(sonate)
 
 prepare_for_rebuilding(outcome)
-write_to_csv(outcome)
+write_to_csv(outcome)'''

@@ -1,0 +1,781 @@
+0.0,Tempo,34.0
+0.0,Formula de Compasso,2/2
+0.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+0.0,Rest,Parte_2,4.0,0,
+0.0,Chord,Parte_3,4.0,"[37, 49]",
+0.0,Rest,Parte_4,4.0,0,
+0.0,Rest,Parte_5,4.0,0,
+0.0,Rest,Parte_6,4.0,0,
+1.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+2.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+3.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+4.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+4.0,Rest,Parte_2,4.0,0,
+4.0,Chord,Parte_3,4.0,"[35, 47]",
+4.0,Rest,Parte_4,4.0,0,
+4.0,Rest,Parte_5,4.0,0,
+4.0,Rest,Parte_6,4.0,0,
+5.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+6.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+7.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+8.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+8.0,Rest,Parte_2,4.0,0,
+8.0,Chord,Parte_3,2.0,"[33, 45]",
+8.0,Rest,Parte_4,4.0,0,
+8.0,Rest,Parte_5,4.0,0,
+8.0,Rest,Parte_6,4.0,0,
+9.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+10.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 62, None], ['Note', 0.5, 66, None]]"
+10.0,Chord,Parte_3,2.0,"[30, 42]",
+11.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 62, None], ['Note', 0.5, 66, None]]"
+12.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 60, None], ['Note', 0.5, 66, None]]"
+12.0,Rest,Parte_2,4.0,0,
+12.0,Rest,Parte_3,3.0,0,
+12.0,Chord,Parte_4,2.0,"[32, 44]",
+12.0,Rest,Parte_5,4.0,0,
+12.0,Rest,Parte_6,4.0,0,
+13.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+14.0,Tempo,31.0
+14.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 63, None]]"
+14.0,Chord,Parte_4,2.0,"[32, 44]",
+15.0,Tempo,30.0
+15.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+15.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None], ['Note', 0.5, 61, None]]"
+16.0,Tuplet 3:2,Parte_1,"[['Rest', 2.0, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+16.0,Rest,Parte_2,2.0,0,
+16.0,Chord,Parte_4,4.0,"[37, 44, 49]",
+16.0,Rest,Parte_5,4.0,0,
+16.0,Rest,Parte_6,4.0,0,
+17.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 57, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 57, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 56, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 60, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 55, None], ['Note', 0.5, 61, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 54, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+18.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+18.0,Rest,Parte_2,1.0,0,
+19.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+19.0,Note,Parte_2,0.75,68,
+19.75,Note,Parte_2,0.25,68,
+20.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+20.0,Note,Parte_2,3.0,68,
+20.0,Chord,Parte_4,4.0,"[36, 44, 48]",
+20.0,Rest,Parte_5,4.0,0,
+20.0,Rest,Parte_6,4.0,0,
+21.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+22.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+23.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+23.0,Note,Parte_2,0.75,68,
+23.75,Note,Parte_2,0.25,68,
+24.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+24.0,Note,Parte_2,2.0,68,
+24.0,Chord,Parte_4,2.0,"[37, 49]",
+24.0,Rest,Parte_5,4.0,0,
+24.0,Rest,Parte_6,4.0,0,
+25.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+26.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+26.0,Note,Parte_2,2.0,69,
+26.0,Chord,Parte_4,2.0,"[30, 42]",
+27.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+28.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+28.0,Note,Parte_2,2.0,68,
+28.0,Chord,Parte_4,2.0,"[35, 47]",
+28.0,Rest,Parte_5,4.0,0,
+28.0,Rest,Parte_6,4.0,0,
+29.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+30.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 63, None]]"
+30.0,Note,Parte_2,1.0,66,
+30.0,Chord,Parte_4,2.0,"[35, 47]",
+31.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 63, None]]"
+31.0,Note,Parte_2,1.0,71,
+32.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+32.0,Note,Parte_2,1.0,64,
+32.0,Chord,Parte_4,4.0,"[40, 52]",
+32.0,Rest,Parte_5,4.0,0,
+32.0,Rest,Parte_6,4.0,0,
+33.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+33.0,Rest,Parte_2,1.0,0,
+34.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+34.0,Rest,Parte_2,2.0,0,
+35.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+36.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+36.0,Rest,Parte_2,2.0,0,
+36.0,Chord,Parte_4,4.0,"[40, 52]",
+36.0,Rest,Parte_5,4.0,0,
+36.0,Rest,Parte_6,4.0,0,
+37.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+38.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+38.0,Rest,Parte_2,1.0,0,
+39.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+39.0,Note,Parte_2,0.75,67,
+39.75,Note,Parte_2,0.25,67,
+40.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 65, None]]"
+40.0,Note,Parte_2,3.0,67,
+40.0,Chord,Parte_4,4.0,"[38, 50]",
+40.0,Rest,Parte_5,4.0,0,
+40.0,Rest,Parte_6,4.0,0,
+41.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 65, None]]"
+42.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 65, None]]"
+43.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 65, None]]"
+43.0,Note,Parte_2,0.75,67,
+43.75,Note,Parte_2,0.25,67,
+44.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+44.0,Note,Parte_2,3.0,67,
+44.0,Chord,Parte_4,1.0,"[36, 48]",
+44.0,Rest,Parte_5,4.0,0,
+44.0,Rest,Parte_6,4.0,0,
+45.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+45.0,Chord,Parte_4,1.0,"[35, 47]",
+46.0,Tuplet 3:2,Parte_1,"[['Rest', 1.0, 0, None], ['Note', 0.5, 64, None]]"
+46.0,Chord,Parte_4,2.0,"[34, 46]",
+47.0,Rest,Parte_1,1.0,0,
+47.0,Note,Parte_2,1.0,66,
+48.0,Note,Parte_1,2.0,66,
+48.0,Rest,Parte_2,4.0,0,
+48.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+48.0,Chord,Parte_4,2.0,"[35, 47]",
+48.0,Rest,Parte_5,4.0,0,
+48.0,Rest,Parte_6,4.0,0,
+49.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+50.0,Note,Parte_1,1.0,67,
+50.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Note', 0.5, 61, None]]"
+50.0,Note,Parte_4,1.0,40,
+51.0,Note,Parte_1,1.0,64,
+51.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 52, None], ['Note', 0.5, 59, None], ['Note', 0.5, 61, None]]"
+51.0,Note,Parte_4,1.0,43,
+52.0,Note,Parte_1,2.0,66,
+52.0,Rest,Parte_2,4.0,0,
+52.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+52.0,Note,Parte_4,2.0,42,
+52.0,Rest,Parte_5,4.0,0,
+52.0,Rest,Parte_6,4.0,0,
+53.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+54.0,Note,Parte_1,2.0,66,
+54.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 58, None], ['Note', 0.5, 61, None]]"
+54.0,Chord,Parte_4,2.0,"[30, 42]",
+55.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 58, None], ['Note', 0.5, 61, None]]"
+56.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 62, None], ['Note', 0.5, 66, None]]"
+56.0,Note,Parte_2,1.0,59,
+56.0,Chord,Parte_3,4.0,"[35, 47]",start
+56.0,Rest,Parte_4,4.0,0,
+56.0,Rest,Parte_5,4.0,0,
+56.0,Rest,Parte_6,4.0,0,
+57.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 62, None], ['Note', 0.5, 66, None]]"
+57.0,Rest,Parte_2,1.0,0,
+58.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+58.0,Rest,Parte_2,1.0,0,
+59.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+59.0,Note,Parte_2,1.0,71,
+60.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+60.0,Note,Parte_2,3.0,72,
+60.0,Chord,Parte_3,1.0,"[35, 47]",stop
+60.0,Rest,Parte_4,4.0,0,
+60.0,Rest,Parte_5,4.0,0,
+60.0,Rest,Parte_6,4.0,0,
+61.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+61.0,Chord,Parte_3,1.0,"[40, 52]",
+62.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+62.0,Chord,Parte_3,1.0,"[43, 55]",
+63.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+63.0,Note,Parte_2,1.0,70,
+63.0,Chord,Parte_3,1.0,"[40, 52]",
+64.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+64.0,Note,Parte_2,3.0,71,
+64.0,Chord,Parte_3,4.0,"[35, 47]",start
+64.0,Rest,Parte_4,4.0,0,
+64.0,Rest,Parte_5,4.0,0,
+64.0,Rest,Parte_6,4.0,0,
+65.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+66.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+67.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+67.0,Note,Parte_2,1.0,71,
+68.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+68.0,Note,Parte_2,3.0,72,
+68.0,Chord,Parte_3,1.0,"[35, 47]",stop
+68.0,Rest,Parte_4,4.0,0,
+68.0,Rest,Parte_5,4.0,0,
+68.0,Rest,Parte_6,4.0,0,
+69.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+69.0,Chord,Parte_3,1.0,"[40, 52]",
+70.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+70.0,Chord,Parte_3,1.0,"[43, 55]",
+71.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 67, None]]"
+71.0,Note,Parte_2,1.0,70,
+71.0,Chord,Parte_3,1.0,"[40, 52]",
+72.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+72.0,Note,Parte_2,2.0,71,
+72.0,Chord,Parte_3,2.0,"[35, 47]",
+72.0,Rest,Parte_4,4.0,0,
+72.0,Rest,Parte_5,4.0,0,
+72.0,Rest,Parte_6,4.0,0,
+73.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+74.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 62, None], ['Note', 0.5, 65, None]]"
+74.0,Note,Parte_2,2.0,71,
+74.0,Chord,Parte_3,2.0,"[32, 44]",
+75.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 62, None], ['Note', 0.5, 65, None]]"
+76.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 61, None], ['Note', 0.5, 68, None]]"
+76.0,Note,Parte_2,2.0,71,
+76.0,Chord,Parte_3,2.0,"[29, 41]",
+76.0,Rest,Parte_4,4.0,0,
+76.0,Rest,Parte_5,4.0,0,
+76.0,Rest,Parte_6,4.0,0,
+77.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 61, None], ['Note', 0.5, 68, None]]"
+78.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+78.0,Note,Parte_2,2.0,69,
+78.0,Chord,Parte_3,2.0,"[30, 42]",
+79.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+80.0,Note,Parte_1,2.0,67,
+80.0,Rest,Parte_2,4.0,0,
+80.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+80.0,Chord,Parte_4,2.0,"[35, 47]",
+80.0,Rest,Parte_5,4.0,0,
+80.0,Rest,Parte_6,4.0,0,
+81.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 55, None], ['Note', 0.5, 59, None], ['Note', 0.5, 62, None]]"
+82.0,Note,Parte_1,2.0,66,
+82.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 57, None], ['Note', 0.5, 63, None]]"
+82.0,Chord,Parte_4,2.0,"[36, 48]",
+83.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 57, None], ['Note', 0.5, 63, None]]"
+84.0,Note,Parte_1,2.0,61,
+84.0,Rest,Parte_2,4.0,0,
+84.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+84.0,Note,Parte_4,2.0,37,
+84.0,Rest,Parte_5,4.0,0,
+84.0,Rest,Parte_6,4.0,0,
+85.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+86.0,Note,Parte_1,1.0,61,
+86.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 56, None]]"
+86.0,Note,Parte_4,2.0,37,
+87.0,Note,Parte_1,1.0,61,
+87.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 53, None], ['Note', 0.5, 56, None]]"
+88.0,Tuplet 6:5,Parte_1,"[['Rest', 2.0, 0, None], ['Note', 0.5, 66, None]]"
+88.0,Rest,Parte_2,2.0,0,
+88.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 57, None], ['Note', 0.5, 61, None]]"
+88.0,Rest,Parte_4,2.0,0,
+88.0,Chord,Parte_5,4.0,"[30, 37, 42]",
+88.0,Rest,Parte_6,4.0,0,
+89.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 61, None], ['Rest', 4.0, 0, None]]"
+90.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+90.0,Rest,Parte_2,1.0,0,
+90.0,Rest,Parte_4,2.0,0,
+91.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+91.0,Note,Parte_2,0.75,73,
+91.75,Note,Parte_2,0.25,73,
+92.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 68, None], ['Note', 0.5, 71, None]]"
+92.0,Note,Parte_2,3.0,73,
+92.0,Chord,Parte_3,4.0,"[41, 49, 53]",
+92.0,Rest,Parte_4,4.0,0,
+92.0,Rest,Parte_5,4.0,0,
+92.0,Rest,Parte_6,4.0,0,
+93.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 68, None], ['Note', 0.5, 71, None]]"
+94.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 68, None], ['Note', 0.5, 71, None]]"
+95.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 68, None], ['Note', 0.5, 71, None]]"
+95.0,Note,Parte_2,0.75,73,
+95.75,Note,Parte_2,0.25,73,
+96.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+96.0,Note,Parte_2,2.0,73,
+96.0,Chord,Parte_3,2.0,"[42, 54]",
+96.0,Rest,Parte_4,4.0,0,
+96.0,Rest,Parte_5,4.0,0,
+96.0,Rest,Parte_6,4.0,0,
+97.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+98.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+98.0,Note,Parte_2,1.0,72,
+98.0,Chord,Parte_3,1.0,"[39, 51]",
+99.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+99.0,Note,Parte_2,1.0,73,
+99.0,Chord,Parte_3,1.0,"[37, 49]",
+100.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+100.0,Note,Parte_2,3.0,75,
+100.0,Chord,Parte_3,3.0,"[36, 44, 48]",
+100.0,Rest,Parte_4,4.0,0,
+100.0,Rest,Parte_5,4.0,0,
+100.0,Rest,Parte_6,4.0,0,
+101.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+102.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+103.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+103.0,Note,Parte_2,1.0,75,
+103.0,Chord,Parte_3,1.0,"[36, 44, 48]",
+104.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 68, None], ['Note', 0.5, 73, None]]"
+104.0,Note,Parte_2,2.0,76,
+104.0,Chord,Parte_3,2.0,"[37, 44, 49]",
+104.0,Rest,Parte_4,4.0,0,
+104.0,Rest,Parte_5,4.0,0,
+104.0,Rest,Parte_6,4.0,0,
+105.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 68, None], ['Note', 0.5, 73, None]]"
+106.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+106.0,Note,Parte_2,1.0,75,
+106.0,Chord,Parte_3,1.0,"[30, 42]",
+107.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 64, None], ['Note', 0.5, 70, None]]"
+107.0,Note,Parte_2,1.0,73,
+107.0,Chord,Parte_3,1.0,"[31, 43]",
+108.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 72, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+108.0,Rest,Parte_2,1.0,0,
+108.0,Rest,Parte_3,1.0,0,
+108.0,Chord,Parte_4,4.0,"[32, 44]",
+108.0,Rest,Parte_5,4.0,0,
+108.0,Rest,Parte_6,4.0,0,
+109.0,Note,Parte_1,1.0,68,
+109.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 68, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+109.0,Rest,Parte_3,3.0,0,
+110.0,Note,Parte_1,1.0,69,
+110.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 69, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+111.0,Note,Parte_1,1.0,66,
+111.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 66, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+112.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+112.0,Rest,Parte_2,1.0,0,
+112.0,Rest,Parte_3,1.0,0,
+112.0,Rest,Parte_4,1.0,0,
+112.0,Chord,Parte_5,4.0,"[32, 44]",
+112.0,Rest,Parte_6,4.0,0,
+113.0,Rest,Parte_1,3.0,0,
+113.0,Tuplet 3:2,Parte_2,"[['Rest', 0.5, 0, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+113.0,Note,Parte_3,1.0,56,
+113.0,Tuplet 3:2,Parte_4,"[['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 54, None], ['Rest', 1.0, 0, None]]"
+114.0,Tuplet 3:2,Parte_2,"[['Rest', 0.5, 0, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+114.0,Note,Parte_3,1.0,57,
+115.0,Tuplet 3:2,Parte_2,"[['Rest', 0.5, 0, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+115.0,Note,Parte_3,1.0,54,
+116.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+116.0,Rest,Parte_2,1.0,0,
+116.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 52, None], ['Rest', 4.0, 0, None], ['Rest', 0.5, 0, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None]]"
+116.0,Rest,Parte_4,1.0,0,
+116.0,Chord,Parte_5,4.0,"[32, 44]",
+116.0,Rest,Parte_6,4.0,0,
+117.0,Note,Parte_1,1.0,73,
+117.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 73, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+117.0,Rest,Parte_4,3.0,0,
+118.0,Note,Parte_1,1.0,76,
+118.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 76, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+119.0,Note,Parte_1,1.0,73,
+119.0,Tuplet 3:2,Parte_2,"[['Note', 0.5, 73, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+120.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Rest', 4.0, 0, None]]"
+120.0,Rest,Parte_2,1.0,0,
+120.0,Rest,Parte_4,1.0,0,
+120.0,Chord,Parte_5,4.0,"[32, 44]",
+120.0,Rest,Parte_6,4.0,0,
+121.0,Rest,Parte_2,3.0,0,
+121.0,Note,Parte_3,1.0,61,
+121.0,Tuplet 3:2,Parte_4,"[['Note', 0.5, 61, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None]]"
+122.0,Note,Parte_3,1.0,64,
+122.0,Tuplet 3:2,Parte_4,"[['Note', 0.5, 64, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None]]"
+123.0,Note,Parte_3,1.0,61,
+123.0,Tuplet 3:2,Parte_4,"[['Note', 0.5, 61, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None]]"
+124.0,Rest,Parte_1,1.0,0,
+124.0,Rest,Parte_2,4.0,0,
+124.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 57, None], ['Note', 0.5, 54, None]]"
+124.0,Chord,Parte_4,4.0,"[32, 44]",
+124.0,Rest,Parte_5,4.0,0,
+124.0,Rest,Parte_6,4.0,0,
+125.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 57, None], ['Note', 0.5, 63, None]]"
+125.0,Rest,Parte_3,3.0,0,
+126.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 66, None], ['Note', 0.5, 63, None]]"
+127.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 69, None], ['Note', 0.5, 66, None], ['Note', 0.5, 72, None]]"
+128.0,Rest,Parte_1,1.0,0,
+128.0,Rest,Parte_2,4.0,0,
+128.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 52, None], ['Note', 0.5, 61, None], ['Note', 0.5, 56, None]]"
+128.0,Chord,Parte_4,4.0,"[32, 44]",
+128.0,Rest,Parte_5,4.0,0,
+128.0,Rest,Parte_6,4.0,0,
+129.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 61, None], ['Note', 0.5, 68, None]]"
+129.0,Rest,Parte_3,3.0,0,
+130.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 73, None], ['Note', 0.5, 68, None]]"
+131.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 76, None], ['Note', 0.5, 73, None], ['Note', 0.5, 68, None]]"
+132.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 67, None], ['Note', 0.5, 64, None]]"
+132.0,Rest,Parte_2,4.0,0,
+132.0,Chord,Parte_3,4.0,"[32, 44]",
+132.0,Rest,Parte_4,4.0,0,
+132.0,Rest,Parte_5,4.0,0,
+132.0,Rest,Parte_6,4.0,0,
+133.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 70, None], ['Note', 0.5, 67, None], ['Note', 0.5, 73, None]]"
+134.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 70, None], ['Note', 0.5, 76, None], ['Note', 0.5, 73, None]]"
+135.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 79, None], ['Note', 0.5, 76, None], ['Note', 0.5, 82, None]]"
+136.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 66, None], ['Note', 0.5, 72, None], ['Note', 0.5, 69, None]]"
+136.0,Rest,Parte_2,4.0,0,
+136.0,Chord,Parte_3,4.0,"[32, 44]",start
+136.0,Rest,Parte_4,4.0,0,
+136.0,Rest,Parte_5,4.0,0,
+136.0,Rest,Parte_6,4.0,0,
+137.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 75, None], ['Note', 0.5, 72, None], ['Note', 0.5, 78, None]]"
+138.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 75, None], ['Note', 0.5, 81, None], ['Note', 0.5, 78, None]]"
+139.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 84, None], ['Note', 0.5, 81, None], ['Note', 0.5, 87, None]]"
+140.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 84, None], ['Note', 0.5, 78, None], ['Note', 0.5, 81, None]]"
+140.0,Rest,Parte_2,4.0,0,
+140.0,Chord,Parte_3,4.0,"[32, 44]",continue
+140.0,Rest,Parte_4,4.0,0,
+140.0,Rest,Parte_5,4.0,0,
+140.0,Rest,Parte_6,4.0,0,
+141.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 75, None], ['Note', 0.5, 78, None], ['Note', 0.5, 72, None]]"
+142.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 75, None], ['Note', 0.5, 69, None], ['Note', 0.5, 72, None]]"
+143.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 66, None], ['Note', 0.5, 69, None], ['Note', 0.5, 63, None]]"
+144.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 66, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+144.0,Rest,Parte_2,2.0,0,
+144.0,Rest,Parte_3,1.0,0,
+144.0,Rest,Parte_4,2.0,0,
+144.0,Chord,Parte_5,4.0,"[32, 44]",stop
+144.0,Rest,Parte_6,4.0,0,
+145.0,Rest,Parte_1,3.0,0,
+145.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 60, None], ['Note', 0.5, 54, None]]"
+146.0,Rest,Parte_2,2.0,0,
+146.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 51, None], ['Note', 0.5, 54, None]]"
+146.0,Tuplet 3:2,Parte_4,"[['Note', 0.5, 57, None], ['Note', 1.0, 51, None]]"
+147.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+147.0,Tuplet 3:2,Parte_4,"[['Note', 1.5, 49, None]]"
+148.0,Rest,Parte_1,4.0,0,
+148.0,Rest,Parte_2,4.0,0,
+148.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 48, None], ['Note', 0.5, 54, None], ['Note', 0.5, 56, None]]"
+148.0,Note,Parte_4,2.0,48,
+148.0,Chord,Parte_5,4.0,"[32, 44]",
+148.0,Rest,Parte_6,4.0,0,
+149.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 56, None], ['Note', 0.5, 54, None]]"
+150.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+150.0,Note,Parte_4,1.0,51,
+151.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+151.0,Note,Parte_4,1.0,49,
+152.0,Rest,Parte_1,4.0,0,
+152.0,Rest,Parte_2,4.0,0,
+152.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 48, None], ['Note', 0.5, 54, None], ['Note', 0.5, 56, None]]"
+152.0,Note,Parte_4,2.0,48,
+152.0,Chord,Parte_5,4.0,"[32, 44]",
+152.0,Rest,Parte_6,4.0,0,
+153.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 56, None], ['Note', 0.5, 54, None]]"
+154.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 50, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+154.0,Note,Parte_4,1.0,50,
+155.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 54, None], ['Note', 0.5, 57, None]]"
+155.0,Note,Parte_4,1.0,49,
+156.0,Rest,Parte_1,2.0,0,
+156.0,Rest,Parte_2,4.0,0,
+156.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 48, None], ['Note', 0.5, 54, None], ['Note', 0.5, 56, None]]"
+156.0,Note,Parte_4,2.0,48,
+156.0,Chord,Parte_5,2.0,"[32, 44]",
+156.0,Rest,Parte_6,4.0,0,
+157.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 57, None], ['Note', 0.5, 56, None], ['Note', 0.5, 54, None]]"
+158.0,Rest,Parte_1,2.0,0,
+158.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 52, None], ['Note', 0.5, 61, None]]"
+158.0,Rest,Parte_4,2.0,0,
+158.0,Chord,Parte_5,2.0,"[33, 45]",
+159.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 49, None], ['Note', 0.5, 52, None], ['Note', 0.5, 61, None]]"
+160.0,Rest,Parte_1,4.0,0,
+160.0,Rest,Parte_2,4.0,0,
+160.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 57, None], ['Note', 0.5, 61, None]]"
+160.0,Chord,Parte_4,2.0,"[32, 42]",
+160.0,Rest,Parte_5,4.0,0,
+160.0,Rest,Parte_6,4.0,0,
+161.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 57, None], ['Note', 0.5, 61, None]]"
+162.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 56, None], ['Note', 0.5, 60, None]]"
+162.0,Chord,Parte_4,2.0,"[32, 44]",
+163.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 51, None], ['Note', 0.5, 54, None], ['Note', 0.5, 60, None]]"
+164.0,Tuplet 12:7,Parte_1,"[['Rest', 4.0, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+164.0,Rest,Parte_2,3.0,0,
+164.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 52, None], ['Note', 0.5, 56, None], ['Note', 0.5, 61, None]]"
+164.0,Rest,Parte_4,3.0,0,
+164.0,Chord,Parte_5,4.0,"[37, 44, 49]",
+164.0,Rest,Parte_6,4.0,0,
+165.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+166.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 57, None], ['Rest', 1.0, 0, None], ['Note', 0.5, 56, None], ['Rest', 4.0, 0, None]]"
+167.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+167.0,Note,Parte_2,0.75,68,
+167.0,Rest,Parte_4,1.0,0,
+167.75,Note,Parte_2,0.25,68,
+168.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+168.0,Note,Parte_2,3.0,68,
+168.0,Chord,Parte_4,4.0,"[36, 44, 48]",
+168.0,Rest,Parte_5,4.0,0,
+168.0,Rest,Parte_6,4.0,0,
+169.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+170.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+171.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+171.0,Note,Parte_2,0.75,68,
+171.75,Note,Parte_2,0.25,68,
+172.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+172.0,Note,Parte_2,2.0,68,
+172.0,Chord,Parte_4,2.0,"[37, 49]",
+172.0,Rest,Parte_5,4.0,0,
+172.0,Rest,Parte_6,4.0,0,
+173.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+174.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+174.0,Note,Parte_2,2.0,69,
+174.0,Chord,Parte_4,2.0,"[30, 42]",
+175.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 61, None], ['Note', 0.5, 66, None]]"
+176.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 59, None], ['Note', 0.5, 64, None]]"
+176.0,Note,Parte_2,2.0,68,
+176.0,Chord,Parte_4,2.0,"[35, 47]",
+176.0,Rest,Parte_5,4.0,0,
+176.0,Rest,Parte_6,4.0,0,
+177.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 59, None], ['Note', 0.5, 64, None]]"
+178.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 59, None], ['Note', 0.5, 63, None]]"
+178.0,Note,Parte_2,1.0,66,
+178.0,Chord,Parte_4,2.0,"[35, 47]",
+179.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 59, None], ['Note', 0.5, 63, None]]"
+179.0,Note,Parte_2,1.0,71,
+180.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 59, None], ['Note', 0.5, 64, None]]"
+180.0,Note,Parte_2,1.0,64,
+180.0,Chord,Parte_4,4.0,"[40, 52]",
+180.0,Rest,Parte_5,4.0,0,
+180.0,Rest,Parte_6,4.0,0,
+181.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+181.0,Rest,Parte_2,1.0,0,
+182.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+182.0,Rest,Parte_2,1.0,0,
+183.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+183.0,Note,Parte_2,0.75,71,
+183.75,Note,Parte_2,0.25,71,
+184.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+184.0,Note,Parte_2,3.0,71,
+184.0,Chord,Parte_3,4.0,"[39, 51]",
+184.0,Rest,Parte_4,4.0,0,
+184.0,Rest,Parte_5,4.0,0,
+184.0,Rest,Parte_6,4.0,0,
+185.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+186.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+187.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+187.0,Note,Parte_2,0.75,71,
+187.75,Note,Parte_2,0.25,71,
+188.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+188.0,Note,Parte_2,2.0,71,
+188.0,Chord,Parte_3,2.0,"[40, 52]",
+188.0,Rest,Parte_4,4.0,0,
+188.0,Rest,Parte_5,4.0,0,
+188.0,Rest,Parte_6,4.0,0,
+189.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+190.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+190.0,Note,Parte_2,1.0,72,
+190.0,Chord,Parte_3,1.0,"[39, 51]",
+191.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+191.0,Note,Parte_2,1.0,73,
+191.0,Chord,Parte_3,1.0,"[37, 49]",
+192.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+192.0,Note,Parte_2,2.0,75,
+192.0,Chord,Parte_3,2.0,"[36, 44, 48]",
+192.0,Rest,Parte_4,4.0,0,
+192.0,Rest,Parte_5,4.0,0,
+192.0,Rest,Parte_6,4.0,0,
+193.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+194.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 68, None], ['Note', 0.5, 73, None]]"
+194.0,Note,Parte_2,2.0,76,
+194.0,Chord,Parte_3,2.0,"[37, 44, 49]",
+195.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 68, None], ['Note', 0.5, 73, None]]"
+196.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 62, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+196.0,Note,Parte_2,2.0,74,
+196.0,Chord,Parte_3,2.0,"[30, 42]",
+196.0,Rest,Parte_4,4.0,0,
+196.0,Rest,Parte_5,4.0,0,
+196.0,Rest,Parte_6,4.0,0,
+197.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 62, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+198.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+198.0,Note,Parte_2,2.0,72,
+198.0,Chord,Parte_3,2.0,"[32, 44]",
+199.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 60, None], ['Note', 0.5, 66, None], ['Note', 0.5, 68, None]]"
+200.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+200.0,Note,Parte_2,3.0,73,
+200.0,Chord,Parte_3,4.0,"[37, 49]",start
+200.0,Rest,Parte_4,4.0,0,
+200.0,Rest,Parte_5,4.0,0,
+200.0,Rest,Parte_6,4.0,0,
+201.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+202.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+203.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+203.0,Note,Parte_2,1.0,73,
+204.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+204.0,Note,Parte_2,3.0,74,
+204.0,Chord,Parte_3,1.0,"[37, 49]",stop
+204.0,Rest,Parte_4,4.0,0,
+204.0,Rest,Parte_5,4.0,0,
+204.0,Rest,Parte_6,4.0,0,
+205.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+205.0,Chord,Parte_3,1.0,"[42, 54]",
+206.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+206.0,Chord,Parte_3,1.0,"[45, 57]",
+207.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+207.0,Note,Parte_2,1.0,72,
+207.0,Chord,Parte_3,1.0,"[42, 54]",
+208.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+208.0,Note,Parte_2,3.0,73,
+208.0,Chord,Parte_3,4.0,"[37, 49]",start
+208.0,Rest,Parte_4,4.0,0,
+208.0,Rest,Parte_5,4.0,0,
+208.0,Rest,Parte_6,4.0,0,
+209.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+210.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+211.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+211.0,Note,Parte_2,1.0,73,
+212.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+212.0,Note,Parte_2,3.0,74,
+212.0,Chord,Parte_3,1.0,"[37, 49]",stop
+212.0,Rest,Parte_4,4.0,0,
+212.0,Rest,Parte_5,4.0,0,
+212.0,Rest,Parte_6,4.0,0,
+213.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+213.0,Chord,Parte_3,1.0,"[42, 54]",
+214.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+214.0,Chord,Parte_3,1.0,"[45, 57]",
+215.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+215.0,Note,Parte_2,1.0,72,
+215.0,Chord,Parte_3,1.0,"[42, 54]",
+216.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+216.0,Note,Parte_2,2.0,73,
+216.0,Chord,Parte_3,2.0,"[37, 49]",
+216.0,Rest,Parte_4,4.0,0,
+216.0,Rest,Parte_5,4.0,0,
+216.0,Rest,Parte_6,4.0,0,
+217.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 65, None], ['Note', 0.5, 68, None]]"
+218.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+218.0,Note,Parte_2,2.0,73,
+218.0,Chord,Parte_3,2.0,"[30, 42]",
+219.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+220.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+220.0,Note,Parte_2,3.0,71,
+220.0,Chord,Parte_3,3.0,"[39, 51]",
+220.0,Rest,Parte_4,4.0,0,
+220.0,Rest,Parte_5,4.0,0,
+220.0,Rest,Parte_6,4.0,0,
+221.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+222.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+223.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 59, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+223.0,Note,Parte_2,1.0,71,
+223.0,Chord,Parte_3,1.0,"[40, 52]",
+224.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 64, None], ['Note', 0.5, 68, None]]"
+224.0,Note,Parte_2,1.0,69,
+224.0,Chord,Parte_3,1.0,"[37, 49]",
+224.0,Rest,Parte_4,4.0,0,
+224.0,Rest,Parte_5,4.0,0,
+224.0,Rest,Parte_6,4.0,0,
+225.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+225.0,Note,Parte_2,1.0,69,
+225.0,Chord,Parte_3,1.0,"[39, 51]",
+226.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+226.0,Note,Parte_2,1.0,68,
+226.0,Chord,Parte_3,1.0,"[36, 48]",
+227.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+227.0,Note,Parte_2,1.0,68,
+227.0,Chord,Parte_3,1.0,"[37, 49]",
+228.0,Note,Parte_1,2.0,66,
+228.0,Rest,Parte_2,4.0,0,
+228.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 61, None], ['Note', 0.5, 63, None]]"
+228.0,Chord,Parte_4,2.0,"[33, 45]",
+228.0,Rest,Parte_5,4.0,0,
+228.0,Rest,Parte_6,4.0,0,
+229.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 61, None], ['Note', 0.5, 63, None]]"
+230.0,Note,Parte_1,1.0,68,
+230.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 63, None]]"
+230.0,Chord,Parte_4,1.0,"[32, 44]",
+231.0,Note,Parte_1,1.0,69,
+231.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 63, None]]"
+231.0,Chord,Parte_4,1.0,"[30, 42]",
+232.0,Note,Parte_1,2.0,68,
+232.0,Rest,Parte_2,4.0,0,
+232.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+232.0,Chord,Parte_4,2.0,"[32, 44]",
+232.0,Rest,Parte_5,4.0,0,
+232.0,Rest,Parte_6,4.0,0,
+233.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+234.0,Note,Parte_1,2.0,68,
+234.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+234.0,Chord,Parte_4,2.0,"[32, 44]",
+235.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 54, None], ['Note', 0.5, 60, None], ['Note', 0.5, 63, None]]"
+236.0,Rest,Parte_1,1.0,0,
+236.0,Note,Parte_2,1.0,61,
+236.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 52, None], ['Note', 0.5, 56, None], ['Note', 0.5, 61, None]]"
+236.0,Rest,Parte_4,1.0,0,
+236.0,Note,Parte_5,4.0,37,
+236.0,Note,Parte_6,3.0,44,
+237.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+237.0,Rest,Parte_2,3.0,0,
+237.0,Rest,Parte_3,3.0,0,
+237.0,Rest,Parte_4,3.0,0,
+238.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+239.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 61, None], ['Note', 0.5, 64, None]]"
+239.0,Note,Parte_6,0.75,44,
+239.75,Note,Parte_6,0.25,44,
+240.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+240.0,Rest,Parte_2,4.0,0,
+240.0,Note,Parte_3,4.0,36,
+240.0,Note,Parte_4,3.0,44,
+240.0,Rest,Parte_5,4.0,0,
+240.0,Rest,Parte_6,4.0,0,
+241.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+242.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+243.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 63, None], ['Note', 0.5, 66, None]]"
+243.0,Note,Parte_4,0.75,44,
+243.75,Note,Parte_4,0.25,44,
+244.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 64, None], ['Note', 0.5, 61, None]]"
+244.0,Rest,Parte_2,4.0,0,
+244.0,Note,Parte_3,4.0,37,
+244.0,Note,Parte_4,3.0,44,
+244.0,Rest,Parte_5,4.0,0,
+244.0,Rest,Parte_6,4.0,0,
+245.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 68, None], ['Note', 0.5, 64, None], ['Note', 0.5, 73, None]]"
+246.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 68, None], ['Note', 0.5, 76, None], ['Note', 0.5, 73, None]]"
+247.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 80, None], ['Note', 0.5, 76, None], ['Note', 0.5, 73, None]]"
+247.0,Note,Parte_4,0.75,44,
+247.75,Note,Parte_4,0.25,44,
+248.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 72, None], ['Note', 0.5, 75, None], ['Note', 0.5, 69, None]]"
+248.0,Rest,Parte_2,3.0,0,
+248.0,Rest,Parte_3,3.0,0,
+248.0,Note,Parte_4,4.0,32,
+248.0,Note,Parte_5,3.0,44,
+248.0,Rest,Parte_6,4.0,0,
+249.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 72, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+250.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 57, 'start']]"
+251.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, 'stop'], ['Note', 0.5, 56, None], ['Note', 0.5, 54, None]]"
+251.0,Note,Parte_2,1.0,60,
+251.0,Rest,Parte_3,1.0,0,
+251.0,Note,Parte_5,0.75,44,
+251.75,Note,Parte_5,0.25,44,
+252.0,Tuplet 3:2,Parte_1,"[['Chord', 0.5, [52, 61], None], ['Note', 0.5, 64, None], ['Note', 0.5, 61, None]]"
+252.0,Rest,Parte_2,4.0,0,
+252.0,Note,Parte_3,4.0,37,
+252.0,Note,Parte_4,3.0,44,
+252.0,Rest,Parte_5,4.0,0,
+252.0,Rest,Parte_6,4.0,0,
+253.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 68, None], ['Note', 0.5, 64, None], ['Note', 0.5, 73, None]]"
+254.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 68, None], ['Note', 0.5, 76, None], ['Note', 0.5, 73, None]]"
+255.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 80, None], ['Note', 0.5, 76, None], ['Note', 0.5, 73, None]]"
+255.0,Note,Parte_4,0.75,44,
+255.75,Note,Parte_4,0.25,44,
+256.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 72, None], ['Note', 0.5, 75, None], ['Note', 0.5, 69, None]]"
+256.0,Rest,Parte_2,3.0,0,
+256.0,Rest,Parte_3,3.0,0,
+256.0,Note,Parte_4,4.0,32,
+256.0,Note,Parte_5,3.0,44,
+256.0,Rest,Parte_6,4.0,0,
+257.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 72, None], ['Note', 0.5, 66, None], ['Note', 0.5, 69, None]]"
+258.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 63, None], ['Note', 0.5, 66, None], ['Note', 0.5, 57, 'start']]"
+259.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 57, 'stop'], ['Note', 0.5, 56, None], ['Note', 0.5, 54, None]]"
+259.0,Note,Parte_2,1.0,60,
+259.0,Rest,Parte_3,1.0,0,
+259.0,Note,Parte_5,0.75,44,
+259.75,Note,Parte_5,0.25,44,
+260.0,Tempo,33.0
+260.0,Tuplet 3:2,Parte_1,"[['Chord', 0.5, [52, 61], None], ['Note', 0.5, 56, None], ['Note', 0.5, 61, None]]"
+260.0,Rest,Parte_2,4.0,0,
+260.0,Note,Parte_3,4.0,37,start
+260.0,Note,Parte_4,2.0,44,
+260.0,Rest,Parte_5,4.0,0,
+260.0,Rest,Parte_6,4.0,0,
+261.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 64, None], ['Note', 0.5, 61, None], ['Note', 0.5, 56, None]]"
+262.0,Tempo,32.0
+262.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 52, None], ['Note', 0.5, 56, None]]"
+262.0,Note,Parte_4,2.0,49,
+263.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 61, None], ['Note', 0.5, 56, None], ['Note', 0.5, 52, None]]"
+264.0,Tempo,31.0
+264.0,Tuplet 3:2,Parte_1,"[['Rest', 0.5, 0, None], ['Note', 0.5, 49, None], ['Note', 0.5, 52, None]]"
+264.0,Rest,Parte_2,4.0,0,
+264.0,Chord,Parte_3,2.0,"[37, 44]",stop
+264.0,Rest,Parte_4,4.0,0,
+264.0,Rest,Parte_5,4.0,0,
+264.0,Rest,Parte_6,4.0,0,
+265.0,Tuplet 3:2,Parte_1,"[['Note', 0.5, 56, None], ['Note', 0.5, 52, None], ['Note', 0.5, 49, None]]"
+266.0,Tempo,30.0
+266.0,Rest,Parte_1,2.0,0,
+266.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 44, None], ['Note', 0.5, 49, None], ['Note', 0.5, 44, None]]"
+267.0,Tuplet 3:2,Parte_3,"[['Note', 0.5, 40, None], ['Note', 0.5, 44, None], ['Note', 0.5, 40, None]]"
+268.0,Tempo,28.0
+268.0,Rest,Parte_1,2.0,0,
+268.0,Rest,Parte_2,4.0,0,
+268.0,Note,Parte_3,2.0,37,
+268.0,Rest,Parte_4,4.0,0,
+268.0,Rest,Parte_5,4.0,0,
+268.0,Rest,Parte_6,4.0,0,
+270.0,Chord,Parte_1,2.0,"[52, 56, 61]",
+270.0,Chord,Parte_3,2.0,"[37, 44, 49]",
+272.0,Chord,Parte_1,4.0,"[52, 56, 61]",
+272.0,Rest,Parte_2,4.0,0,
+272.0,Chord,Parte_3,4.0,"[37, 44, 49]",
+272.0,Rest,Parte_4,4.0,0,
+272.0,Rest,Parte_5,4.0,0,
+272.0,Rest,Parte_6,4.0,0,

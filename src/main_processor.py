@@ -17,8 +17,7 @@ for file in os.listdir(xml_path):
         os.mkdir('outcome_txts')
     path_and_name = os.path.join("outcome_txts", txt_name)
 
-    #final_list = extract_data(filename, new_filename=path_and_name)
-    #score = create_piece(final_list)
+    final_list = extract_data(filename, new_filename=path_and_name)
 
     print(file + ' correctly transformed')
 
@@ -45,8 +44,6 @@ for file in os.listdir(xml_path):
     outcome = prepare_for_learning(sonate)
 
     list_of_every_piece.append(outcome)
-
-    break
 
 flatten_list = []
 string_of_every_piece = ''

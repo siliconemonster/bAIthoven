@@ -1,12 +1,6 @@
 import csv
 import os
   
-'''with open('csv_file', 'w', newline='') as f:
-      
-    # using csv.writer method from CSV package
-    write = csv.writer(f)
-    write.writerows(lista)'''
-
 def read_from_csv(path):
   with open(path, newline='') as f:
     reader = csv.reader(f)
@@ -48,7 +42,7 @@ def rejoin_chords(whole_piece):
     notes = []
     if 'Chord' in event[1]:
       count = 0
-      if event[0] == whole_piece[index-1][0] and event[2] == whole_piece[index-1][2]:
+      if event[0] == whole_piece[index-1][0] and event[1] == whole_piece[index+count-1][1] and event[2] == whole_piece[index-1][2]:
         continue
       else:
         # respeitar o tamanho + próximo ser chord também + próximo ser mesma Part + próximo ter mesmo offset
@@ -116,7 +110,9 @@ def prepare_for_learning(whole_list):
     else:
       no_tuplets_list.append(event)
 
-  #print(no_tuplets_list)
+  print('This is the sonate with all the tuplets separated')
+  print(no_tuplets_list)
+  print()
 
   no_chords_list = []
   for event in no_tuplets_list:
@@ -127,16 +123,24 @@ def prepare_for_learning(whole_list):
     else:
       no_chords_list.append(event)
 
-  #print(no_chords_list)
+  print('This is the sonate with all the tuplets and chords separated')
+  print(no_chords_list)
+  print()
 
   return no_chords_list
 
 def prepare_for_rebuilding(no_chords_list):
   chords_list = rejoin_chords(no_chords_list)
-  #print(chords_list)
+
+  print('This is the sonate with all the chords rebuilt')
+  print(chords_list)
+  print()
 
   rebuilt_list = rejoin_tuplets(chords_list)
-  #print(rebuilt_list)
+  
+  print('This is the sonate with all the chords and tuplets rebuilt')
+  print(rebuilt_list)
+  print()
 
   return rebuilt_list
 

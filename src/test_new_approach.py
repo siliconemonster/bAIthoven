@@ -48,7 +48,7 @@ def rejoin_chords(whole_piece):
     notes = []
     if 'Chord' in event[1]:
       count = 0
-      if event[0] == whole_piece[index-1][0] and event[2] == whole_piece[index-1][2]:
+      if event[0] == whole_piece[index-1][0] and event[1] == whole_piece[index+count-1][1] and event[2] == whole_piece[index-1][2]:
         continue
       else:
         # respeitar o tamanho + próximo ser chord também + próximo ser mesma Part + próximo ter mesmo offset

@@ -44,6 +44,8 @@ for file in os.listdir(xml_path):
     path_to_read = os.path.join(csv_path)
 
     sonate = read_from_csv(path_to_read)
+    print(sonate)
+    print()    
     outcome = prepare_for_learning(sonate)
 
     list_of_every_piece.append(outcome)
@@ -108,7 +110,21 @@ for index, element in enumerate(translated_flat_list):
 
 #print(no_chord_no_tuplet_output)
 
-outcome = prepare_for_rebuilding(no_chord_no_tuplet_output)
+no_chord_no_tuplet_output_eval = []
+for event in no_chord_no_tuplet_output:
+      row = []
+      for index, element in enumerate(event):
+        if index == 1 or index == 2:
+          row.append(element)
+        elif index == 5 and element != 'None':
+          row.append(element)
+        elif element == 'None':
+          row.append(None)
+        else:
+          row.append(eval(element))
+      no_chord_no_tuplet_output_eval.append(row)
+
+outcome = prepare_for_rebuilding(no_chord_no_tuplet_output_eval)
 
 print(outcome)
 

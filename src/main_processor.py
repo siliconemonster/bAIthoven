@@ -48,8 +48,6 @@ for file in os.listdir(xml_path):
 
     list_of_every_piece.append(outcome)
 
-    break
-
 flatten_list = []
 string_of_every_piece = ''
 for sonate in list_of_every_piece:

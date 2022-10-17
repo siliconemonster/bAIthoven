@@ -64,17 +64,23 @@ def rejoin_chords(whole_piece):
   return whole_piece
 
 def rejoin_tuplets(whole_piece):
-  rejoined_tupltes = []
   flag_tuplet = 1
   tuplet_list = []
-  for event in whole_piece:
-    if 'Tuplet' in event[1]:
-
+  total = 1
+  count = 0
+  for index, event in enumerate(whole_piece):
+    if 'Tuplet' in event[1]:      
       tuplet_info = event[1].split()
       info = [tuplet_info[3], event[3], event[4], event[5]]
       tuplet_list.append(info)
 
-      if flag_tuplet == int(tuplet_info[1][0]):
+      tuplet_comparer = tuplet_info[0] + ' ' + tuplet_info[1]
+
+      while index+count+1 < len(whole_piece) and tuplet_comparer in whole_piece[index+count+1][1] and event[2] == whole_piece[index+count+1][2] and event[0] == whole_piece[index+count+1][0]:
+        count = count + 1
+        total = total + 1
+
+      if flag_tuplet == total:
         event[1] = 'Tuplet ' + tuplet_info[1]
         event[3] = tuplet_list
 
@@ -83,6 +89,8 @@ def rejoin_tuplets(whole_piece):
 
         tuplet_list = []
         flag_tuplet = 1
+        total = 1
+        count = 0
       else:
         event.append('flagged')
         flag_tuplet = flag_tuplet + 1

@@ -2,6 +2,7 @@ from test_new_approach import *
 from testing import *
 import os
 import csv
+from fractions import Fraction
 
 
 # --------------- Parse sonates ---------------
@@ -31,6 +32,8 @@ for file in os.listdir(xml_path):
     with open(txt_path, 'r') as f:
         for line in f:
             txt_list.append(eval(line.strip()))
+            print(line)
+            print(eval(line.strip()))
     
     if not os.path.isdir('csvs'):
         os.mkdir('csvs')
@@ -130,7 +133,10 @@ for event in no_chord_no_tuplet_output:
         elif element == 'None':
           row.append(None)
         else:
-          row.append(eval(element))
+          if '/' in element:
+            slash_position = element.find('/')
+            row.append(Fraction(int(element[0:slash_position]), int(element[slash_position+1:])))
+          else: row.append(eval(element))
       no_chord_no_tuplet_output_eval.append(row)
 
 print('This is the unflattened list with eval:')
@@ -143,3 +149,5 @@ print('This is the outcome:')
 print(outcome)
 print()
 
+score = create_piece(outcome)
+#show_new_piece(score)

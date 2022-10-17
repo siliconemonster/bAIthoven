@@ -1,5 +1,6 @@
 import csv
 import os
+from fractions import Fraction
   
 def read_from_csv(path):
   with open(path, newline='') as f:
@@ -18,7 +19,10 @@ def read_from_csv(path):
         elif element == '':
           row.append(None)
         else:
-          row.append(eval(element))
+          if '/' in element:
+            slash_position = element.find('/')
+            row.append(Fraction(int(element[0:slash_position]), int(element[slash_position+1:])))
+          else: row.append(eval(element))
       whole_list.append(row)
 
     return whole_list

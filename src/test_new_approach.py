@@ -30,7 +30,10 @@ def read_from_csv(path):
 def separate_tuplets(raw_tuplet):
   separated_tupltes = []
   for event in raw_tuplet[3]:
-    info = [raw_tuplet[0], raw_tuplet[1]+' - '+event[0], raw_tuplet[2], event[1], event[2], event[3]]
+    if 'Chord' in event[0]:
+      info = [raw_tuplet[0], raw_tuplet[1]+' - '+event[0]+' ='+str(len(event[2])), raw_tuplet[2], event[1], event[2], event[3]]
+    else:
+      info = [raw_tuplet[0], raw_tuplet[1]+' - '+event[0], raw_tuplet[2], event[1], event[2], event[3]]
     separated_tupltes.append(info)
   return separated_tupltes
 
@@ -42,11 +45,13 @@ def separate_chords(raw_chord):
   return separated_chord
 
 def rejoin_chords(whole_piece):
+  flag_tuplet_chord = 1
+  chord_list = []
   for index, event in enumerate(whole_piece):
     notes = []
-    if 'Chord' in event[1]:
+    if event[1] == 'Chord':
       count = 0
-      if event[0] == whole_piece[index-1][0] and event[1] == whole_piece[index+count-1][1] and event[2] == whole_piece[index-1][2]:
+      if event[0] == whole_piece[index-1][0] and event[2] == whole_piece[index-1][2]:
         continue
       else:
         # respeitar o tamanho + próximo ser chord também + próximo ser mesma Part + próximo ter mesmo offset
@@ -56,6 +61,23 @@ def rejoin_chords(whole_piece):
           count = count + 1
         notes.append(whole_piece[index+count][4])
         whole_piece[index+count][4] = notes
+
+    elif 'Chord' in event[1]:
+      
+      tuplet_info = event[1].split()
+      total = int(tuplet_info[4][1])
+
+      if flag_tuplet_chord == total:
+        event[1] = 'Tuplet '+ tuplet_info[1] +' - Chord'
+        chord_list.append(event[4])
+        event[4] = chord_list
+
+        chord_list = []
+        flag_tuplet_chord = 1
+      else:
+        chord_list.append(event[4])
+        event.append('flagged')
+        flag_tuplet_chord = flag_tuplet_chord + 1
 
   for event in whole_piece.copy():
     if 'flagged' in event:

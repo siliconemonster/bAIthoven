@@ -32,8 +32,6 @@ for file in os.listdir(xml_path):
     with open(txt_path, 'r') as f:
         for line in f:
             txt_list.append(eval(line.strip()))
-            print(line)
-            print(eval(line.strip()))
     
     if not os.path.isdir('csvs'):
         os.mkdir('csvs')
@@ -47,9 +45,9 @@ for file in os.listdir(xml_path):
     path_to_read = os.path.join(csv_path)
 
     sonate = read_from_csv(path_to_read)
-    print('This is the sonate that was read from the CSV:')
-    print(sonate)
-    print()
+    # print('This is the sonate that was read from the CSV:')
+    # print(sonate)
+    # print()
     outcome = prepare_for_learning(sonate)
 
     list_of_every_piece.append(outcome)
@@ -64,10 +62,10 @@ for sonate in list_of_every_piece:
 
 string_of_every_piece = string_of_every_piece[:-1]
 
-print('These are the flatten list and the flatten string:')
-print(flatten_list)
-print(string_of_every_piece)
-print()
+# print('These are the flatten list and the flatten string:')
+# print(flatten_list)
+# print(string_of_every_piece)
+# print()
 
 splitted_string = string_of_every_piece.split(',')
 
@@ -98,9 +96,9 @@ for item in translated_string.split(','):
     parsed_item = int(item)
     translated_flat_list.append(int_into_event_dict[parsed_item])
 
-print('This is the list translated back to musical information:')
-print(translated_flat_list)
-print()
+# print('This is the list translated back to musical information:')
+# print(translated_flat_list)
+# print()
 
 no_chord_no_tuplet_output = []
 
@@ -118,9 +116,9 @@ for index, element in enumerate(translated_flat_list):
         info = [translated_flat_list[index-1], element, translated_flat_list[index+1],translated_flat_list[index+2],translated_flat_list[index+3],translated_flat_list[index+4]]
         no_chord_no_tuplet_output.append(info)
 
-print('This is the unflattened list without eval:')
-print(no_chord_no_tuplet_output)
-print()
+# print('This is the unflattened list without eval:')
+# print(no_chord_no_tuplet_output)
+# print()
 
 no_chord_no_tuplet_output_eval = []
 for event in no_chord_no_tuplet_output:
@@ -139,15 +137,15 @@ for event in no_chord_no_tuplet_output:
           else: row.append(eval(element))
       no_chord_no_tuplet_output_eval.append(row)
 
-print('This is the unflattened list with eval:')
-print(no_chord_no_tuplet_output_eval)
-print()
+# print('This is the unflattened list with eval:')
+# print(no_chord_no_tuplet_output_eval)
+# print()
 
 outcome = prepare_for_rebuilding(no_chord_no_tuplet_output_eval)
 
-print('This is the outcome:')
-print(outcome)
-print()
+# print('This is the outcome:')
+# print(outcome)
+# print()
 
 score = create_piece(outcome)
 #show_new_piece(score)

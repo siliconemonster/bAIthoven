@@ -144,9 +144,9 @@ def prepare_for_learning(whole_list):
     else:
       no_tuplets_list.append(event)
 
-  print('This is the sonate with all the tuplets separated')
-  print(no_tuplets_list)
-  print()
+  # print('This is the sonate with all the tuplets separated')
+  # print(no_tuplets_list)
+  # print()
 
   no_chords_list = []
   for event in no_tuplets_list:
@@ -157,24 +157,24 @@ def prepare_for_learning(whole_list):
     else:
       no_chords_list.append(event)
 
-  print('This is the sonate with all the tuplets and chords separated')
-  print(no_chords_list)
-  print()
+  # print('This is the sonate with all the tuplets and chords separated')
+  # print(no_chords_list)
+  # print()
 
   return no_chords_list
 
 def prepare_for_rebuilding(no_chords_list):
   chords_list = rejoin_chords(no_chords_list)
 
-  print('This is the sonate with all the chords rebuilt')
-  print(chords_list)
-  print()
+  # print('This is the sonate with all the chords rebuilt')
+  # print(chords_list)
+  # print()
 
   rebuilt_list = rejoin_tuplets(chords_list)
   
-  print('This is the sonate with all the chords and tuplets rebuilt')
-  print(rebuilt_list)
-  print()
+  # print('This is the sonate with all the chords and tuplets rebuilt')
+  # print(rebuilt_list)
+  # print()
 
   return rebuilt_list
 

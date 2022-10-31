@@ -37,10 +37,10 @@ def extract_parts(filename):
 
 
 def parse_element(el, noTups=False):
-  if noTups == False:
-    dur = el.duration.quarterLength
-  else:
-    dur = el.duration.quarterLengthNoTuplets
+  #if noTups == False:
+  dur = el.duration.quarterLength
+  #else:
+  #  dur = el.duration.quarterLengthNoTuplets
   off = el.offset
   tie_type = el.tie
   if tie_type != None:

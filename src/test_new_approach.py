@@ -44,38 +44,79 @@ def separate_chords(raw_chord):
     separated_chord.append(info)
   return separated_chord
 
+def remove_fractions(no_chords_list):
+  no_fractions_list = []
+
+  for event in no_chords_list:
+    info = []
+    for idx, element in enumerate(event):
+      if isinstance(element, Fraction) == True:
+        info.append(element.numerator)
+        info.append(element.denominator)
+      elif idx == 0 or idx == 3:
+        info.append(int(element))
+        info.append(1)
+      else: info.append(element)
+    no_fractions_list.append(info)
+
+
+  return no_fractions_list
+
+def rebuild_fractions(no_fractions_list):
+  no_chords_list = []
+
+  header = 'Tempo', 'Tonalidade', 'Formula de Compasso'
+  
+  for event in no_fractions_list:
+    if event[1] == 1:
+      offset = float(event[0])
+    else:
+      offset = Fraction(event[0],event[1])
+
+    if any(keyword in event[2] for keyword in header):
+      info = [offset, event[2], event[3]]
+    else:
+      if event[5] == 1:
+        duration = float(event[4])
+      else:
+        duration = Fraction(event[4],event[5])
+      info = [offset, event[2], event[3], duration, event[6], event[7]]
+    no_chords_list.append(info)
+
+  return no_chords_list
+
 def rejoin_chords(whole_piece):
   flag_tuplet_chord = 1
   chord_list = []
   for index, event in enumerate(whole_piece):
     notes = []
-    if event[1] == 'Chord':
+    if event[2] == 'Chord':
       count = 0
-      if event[0] == whole_piece[index-1][0] and event[2] == whole_piece[index-1][2]:
+      if event[0] == whole_piece[index-1][0] and event[2] == whole_piece[index-1][2] and event[3] == whole_piece[index-1][3]:
         continue
       else:
         # respeitar o tamanho + próximo ser chord também + próximo ser mesma Part + próximo ter mesmo offset
-        while index+count+1 < len(whole_piece) and event[1] == whole_piece[index+count+1][1] and event[2] == whole_piece[index+count+1][2] and event[0] == whole_piece[index+count+1][0]:
+        while index+count+1 < len(whole_piece) and event[2] == whole_piece[index+count+1][2] and event[3] == whole_piece[index+count+1][3] and event[0] == whole_piece[index+count+1][0] and event[1] == whole_piece[index+count+1][1]:
           whole_piece[index+count].append('flagged')
-          notes.append(whole_piece[index+count][4])
+          notes.append(whole_piece[index+count][5])
           count = count + 1
-        notes.append(whole_piece[index+count][4])
-        whole_piece[index+count][4] = notes
+        notes.append(whole_piece[index+count][5])
+        whole_piece[index+count][5] = notes
 
-    elif 'Chord' in event[1]:
+    elif 'Chord' in event[2]:
       
-      tuplet_info = event[1].split()
+      tuplet_info = event[2].split()
       total = int(tuplet_info[4][1])
 
       if flag_tuplet_chord == total:
-        event[1] = 'Tuplet '+ tuplet_info[1] +' - Chord'
-        chord_list.append(event[4])
-        event[4] = chord_list
+        event[2] = 'Tuplet '+ tuplet_info[1] +' - Chord'
+        chord_list.append(event[5])
+        event[5] = chord_list
 
         chord_list = []
         flag_tuplet_chord = 1
       else:
-        chord_list.append(event[4])
+        chord_list.append(event[5])
         event.append('flagged')
         flag_tuplet_chord = flag_tuplet_chord + 1
 
@@ -161,9 +202,17 @@ def prepare_for_learning(whole_list):
   print(no_chords_list)
   print()
 
-  return no_chords_list
+  no_fractions_list = remove_fractions(no_chords_list)
 
-def prepare_for_rebuilding(no_chords_list):
+  print('This is the sonate with all the tuplets and chords separated, and the time information split into num and denom')
+  print(no_fractions_list)
+  print()
+
+  return no_fractions_list
+
+def prepare_for_rebuilding(no_fractions_list):
+
+  no_chords_list = rebuild_fractions(no_fractions_list)
   chords_list = rejoin_chords(no_chords_list)
 
   print('This is the sonate with all the chords rebuilt')

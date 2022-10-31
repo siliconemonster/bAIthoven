@@ -32,8 +32,6 @@ for file in os.listdir(xml_path):
     with open(txt_path, 'r') as f:
         for line in f:
             txt_list.append(eval(line.strip()))
-            print(line)
-            print(eval(line.strip()))
     
     if not os.path.isdir('csvs'):
         os.mkdir('csvs')
@@ -104,18 +102,18 @@ print()
 
 no_chord_no_tuplet_output = []
 
-second_positions_3_pos = 'Tempo', 'Tonalidade', 'Formula de Compasso'
-second_positions_6_pos = 'Note', 'Rest', 'Chord'
+second_positions_4_pos = 'Tempo', 'Tonalidade', 'Formula de Compasso'
+second_positions_8_pos = 'Note', 'Rest', 'Chord'
 
 for index, element in enumerate(translated_flat_list):
-    if any(keyword in element for keyword in second_positions_3_pos):
-        info = [translated_flat_list[index-1], element, translated_flat_list[index+1]]
+    if any(keyword in element for keyword in second_positions_4_pos):
+        info = [translated_flat_list[index-2], translated_flat_list[index-1], element, translated_flat_list[index+1]]
         no_chord_no_tuplet_output.append(info)
     elif 'Tuplet' in element:
-        info = [translated_flat_list[index-1], element, translated_flat_list[index+1],translated_flat_list[index+2],translated_flat_list[index+3],translated_flat_list[index+4]]
+        info = [translated_flat_list[index-2], translated_flat_list[index-1], element, translated_flat_list[index+1],translated_flat_list[index+2],translated_flat_list[index+3],translated_flat_list[index+4],translated_flat_list[index+5]]
         no_chord_no_tuplet_output.append(info)
-    elif any(keyword in element for keyword in second_positions_6_pos):
-        info = [translated_flat_list[index-1], element, translated_flat_list[index+1],translated_flat_list[index+2],translated_flat_list[index+3],translated_flat_list[index+4]]
+    elif any(keyword in element for keyword in second_positions_8_pos):
+        info = [translated_flat_list[index-2], translated_flat_list[index-1], element, translated_flat_list[index+1],translated_flat_list[index+2],translated_flat_list[index+3],translated_flat_list[index+4],translated_flat_list[index+5]]
         no_chord_no_tuplet_output.append(info)
 
 print('This is the unflattened list without eval:')
@@ -126,17 +124,13 @@ no_chord_no_tuplet_output_eval = []
 for event in no_chord_no_tuplet_output:
       row = []
       for index, element in enumerate(event):
-        if index == 1 or index == 2:
+        if index == 2 or index == 3:
           row.append(element)
-        elif index == 5 and element != 'None':
+        elif index == 7 and element != 'None':
           row.append(element)
         elif element == 'None':
           row.append(None)
-        else:
-          if '/' in element:
-            slash_position = element.find('/')
-            row.append(Fraction(int(element[0:slash_position]), int(element[slash_position+1:])))
-          else: row.append(eval(element))
+        else: row.append(eval(element))
       no_chord_no_tuplet_output_eval.append(row)
 
 print('This is the unflattened list with eval:')
@@ -149,5 +143,5 @@ print('This is the outcome:')
 print(outcome)
 print()
 
-score = create_piece(outcome)
+#score = create_piece(outcome)
 #show_new_piece(score)

@@ -3,6 +3,7 @@ from testing import *
 import os
 import csv
 from fractions import Fraction
+from lstm import *
 
 
 # --------------- Parse sonates ---------------
@@ -67,12 +68,16 @@ print(flatten_list)
 print(string_of_every_piece)
 print()
 
+n_vocab = len(set(flatten_list))
+
+train_network(flatten_list, n_vocab)
+
 splitted_string = string_of_every_piece.split(',')
 
 raw_entry = sorted(set(item for item in splitted_string))
 event_into_int_dict = dict((note, number) for number, note in enumerate(raw_entry))
 
-#print(event_into_int_dict)
+'''#print(event_into_int_dict)
 
 translated_string = ''
 for item in splitted_string:
@@ -144,4 +149,4 @@ print(outcome)
 print()
 
 #score = create_piece(outcome)
-#show_new_piece(score)
+#show_new_piece(score)'''

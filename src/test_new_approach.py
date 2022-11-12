@@ -202,9 +202,13 @@ def prepare_for_learning(whole_list):
   print(no_chords_list)
   print()
 
+  print('This is the sonate with all the tuplets and chords separated')
+  print(no_chords_list)
+  print()
+
   no_fractions_list = remove_fractions(no_chords_list)
 
-  print('This is the sonate with all the tuplets and chords separated, and the time information split into num and denom')
+  print('This is the sonate with the time information split into num and denom')
   print(no_fractions_list)
   print()
 
@@ -213,6 +217,11 @@ def prepare_for_learning(whole_list):
 def prepare_for_rebuilding(no_fractions_list):
 
   no_chords_list = rebuild_fractions(no_fractions_list)
+
+  print('This is the sonate with the offset and duration rebuilt')
+  print(no_chords_list)
+  print()
+
   chords_list = rejoin_chords(no_chords_list)
 
   print('This is the sonate with all the chords rebuilt')

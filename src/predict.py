@@ -10,35 +10,35 @@ from keras.layers import LSTM
 from keras.layers import BatchNormalization as BatchNorm
 from keras.layers import Activation
 
-def generate():
+from data_translation_funcs import *
+
+def generate(sonates, n_vocab):
     """ Generate a piano midi file """
     #load the notes used to train the model
-    with open('data/notes', 'rb') as filepath:
-        notes = pickle.load(filepath)
 
     # Get all pitch names
-    pitchnames = sorted(set(item for item in notes))
-    # Get all pitch names
-    n_vocab = len(set(notes))
+    pitchnames = set(item for item in sonates)
 
-    network_input, normalized_input = prepare_sequences(notes, pitchnames, n_vocab)
+    network_input, normalized_input = prepare_sequences(sonates, pitchnames, n_vocab)
     model = create_network(normalized_input, n_vocab)
     prediction_output = generate_notes(model, network_input, pitchnames, n_vocab)
-    create_midi(prediction_output)
+    print(prediction_output)
+    #create_midi(prediction_output)
+    return prediction_output
 
-def prepare_sequences(notes, pitchnames, n_vocab):
+def prepare_sequences(sonates, pitchnames, n_vocab):
     """ Prepare the sequences used by the Neural Network """
     # map between notes and integers and back
-    note_to_int = dict((note, number) for number, note in enumerate(pitchnames))
+    event_to_int = dict((note, number) for number, note in enumerate(pitchnames))
 
     sequence_length = 100
     network_input = []
     output = []
-    for i in range(0, len(notes) - sequence_length, 1):
-        sequence_in = notes[i:i + sequence_length]
-        sequence_out = notes[i + sequence_length]
-        network_input.append([note_to_int[char] for char in sequence_in])
-        output.append(note_to_int[sequence_out])
+    for i in range(0, len(sonates) - sequence_length, 1):
+        sequence_in = sonates[i:i + sequence_length]
+        sequence_out = sonates[i + sequence_length]
+        network_input.append([event_to_int[char] for char in sequence_in])
+        output.append(event_to_int[sequence_out])
 
     n_patterns = len(network_input)
 
@@ -71,7 +71,7 @@ def create_network(network_input, n_vocab):
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
     # Load the weights to each node
-    model.load_weights('weights.hdf5')
+    model.load_weights('weights-improvement-193-0.1417-bigger.hdf5')
 
     return model
 
@@ -135,4 +135,7 @@ def create_midi(prediction_output):
     midi_stream.write('midi', fp='test_output.mid')
 
 if __name__ == '__main__':
-    generate()
+    sonates, n_vocab = rearrange_received_data()
+    predicton_output = generate(sonates, n_vocab)
+    #outcome = rearrange_outcome_sonata(predicton_output)
+    #create_piece(outcome)

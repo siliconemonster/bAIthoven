@@ -11,33 +11,35 @@ from keras.layers import BatchNormalization as BatchNorm
 from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
 
-def train_network(notes, n_vocab):
+from data_translation_funcs import *
 
-    network_input, network_output = prepare_sequences(notes, n_vocab)
+def train_network(sonates, n_vocab):
+
+    network_input, network_output = prepare_sequences(sonates, n_vocab)
 
     model = create_network(network_input, n_vocab)
 
     train(model, network_input, network_output)
 
-def prepare_sequences(notes, n_vocab):
+def prepare_sequences(sonates, n_vocab):
     """ Prepare the sequences used by the Neural Network """
     sequence_length = 100
 
     # get all pitch names
-    pitchnames = set(item for item in notes)
+    pitchnames = set(item for item in sonates)
 
      # create a dictionary to map pitches to integers
-    note_to_int = dict((note, number) for number, note in enumerate(pitchnames))
+    event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
 
     network_input = []
     network_output = []
 
     # create input sequences and the corresponding outputs
-    for i in range(0, len(notes) - sequence_length, 1):
-        sequence_in = notes[i:i + sequence_length]
-        sequence_out = notes[i + sequence_length]
-        network_input.append([note_to_int[char] for char in sequence_in])
-        network_output.append(note_to_int[sequence_out])
+    for i in range(0, len(sonates) - sequence_length, 1):
+        sequence_in = sonates[i:i + sequence_length]
+        sequence_out = sonates[i + sequence_length]
+        network_input.append([event_to_int[char] for char in sequence_in])
+        network_output.append(event_to_int[sequence_out])
 
     n_patterns = len(network_input)
 
@@ -88,4 +90,5 @@ def train(model, network_input, network_output):
     model.fit(network_input, network_output, epochs=200, batch_size=128, callbacks=callbacks_list)
 
 if __name__ == '__main__':
-    train_network()
+    sonates, n_vocab = rearrange_received_data()
+    train_network(sonates, n_vocab)

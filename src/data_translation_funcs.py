@@ -1,6 +1,7 @@
 import csv
 import os
 from fractions import Fraction
+from testing import *
   
 def read_from_csv(path):
   with open(path, newline='') as f:
@@ -244,3 +245,121 @@ outcome = prepare_for_learning(sonate)
 
 prepare_for_rebuilding(outcome)
 write_to_csv(outcome)'''
+
+
+
+def rearrange_received_data():
+
+    xml_path = os.path.join("pieces")
+
+    list_of_every_piece = []
+
+
+    for file in os.listdir(xml_path):
+
+        filename = os.path.join(xml_path, file)
+
+        txt_name = file[:-4]
+        if not os.path.isdir('outcome_txts'):
+            os.mkdir('outcome_txts')
+        path_and_name = os.path.join("outcome_txts", txt_name)
+
+        final_list = extract_data(filename, new_filename=path_and_name)
+
+        print(file + ' correctly transformed')
+
+        txt_path = os.path.join("outcome_txts", txt_name + '.txt')
+
+        txt_list = []
+
+        with open(txt_path, 'r') as f:
+            for line in f:
+                txt_list.append(eval(line.strip()))
+        
+        if not os.path.isdir('csvs'):
+            os.mkdir('csvs')
+        csv_path = os.path.join("csvs", txt_name + '.csv')
+
+        with open(csv_path, 'w', newline='') as f:
+            write = csv.writer(f)
+            write.writerows(txt_list)
+
+
+        path_to_read = os.path.join(csv_path)
+
+        sonate = read_from_csv(path_to_read)
+        print('This is the sonate that was read from the CSV:')
+        print(sonate)
+        print()
+        outcome = prepare_for_learning(sonate)
+
+        list_of_every_piece.append(outcome)
+
+    flatten_list = []
+    string_of_every_piece = ''
+    for sonate in list_of_every_piece:
+        for event in sonate:
+            for element in event:
+                flatten_list.append(element)
+                string_of_every_piece = string_of_every_piece + str(element) + ','
+
+    string_of_every_piece = string_of_every_piece[:-1]
+
+    print('These are the flatten list and the flatten string:')
+    print(flatten_list)
+    print(string_of_every_piece)
+    print()
+
+    n_vocab = len(set(flatten_list))
+    return flatten_list, n_vocab
+
+
+def rearrange_outcome_sonata(sonata):
+
+    no_chord_no_tuplet_output = []
+
+    second_positions_4_pos = 'Tempo', 'Tonalidade', 'Formula de Compasso'
+    second_positions_8_pos = 'Note', 'Rest', 'Chord'
+
+    for index, element in enumerate(sonata):
+        if any(keyword in element for keyword in second_positions_4_pos):
+            info = [sonata[index-2], sonata[index-1], element, sonata[index+1]]
+            no_chord_no_tuplet_output.append(info)
+        elif 'Tuplet' in element:
+            info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
+            no_chord_no_tuplet_output.append(info)
+        elif any(keyword in element for keyword in second_positions_8_pos):
+            info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
+            no_chord_no_tuplet_output.append(info)
+
+    print('This is the unflattened list without eval:')
+    print(no_chord_no_tuplet_output)
+    print()
+
+    no_chord_no_tuplet_output_eval = []
+    for event in no_chord_no_tuplet_output:
+        row = []
+        for index, element in enumerate(event):
+            if index == 2 or index == 3:
+                row.append(element)
+            elif index == 7 and element != 'None':
+                row.append(element)
+            elif element == 'None':
+                row.append(None)
+            else: row.append(eval(element))
+        no_chord_no_tuplet_output_eval.append(row)
+
+    print('This is the unflattened list with eval:')
+    print(no_chord_no_tuplet_output_eval)
+    print()
+
+    outcome = prepare_for_rebuilding(no_chord_no_tuplet_output_eval)
+
+    print('This is the outcome:')
+    print(outcome)
+    print()
+
+def create_piece(outcome):
+  #score = create_piece(outcome)
+  #show_new_piece(score)
+  return

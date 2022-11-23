@@ -1,6 +1,7 @@
 import math
 from fractions import Fraction
 import music21 as m21
+from music21.common.numberTools import opFrac
 import abjad
 from collections import defaultdict
 
@@ -14,11 +15,11 @@ def find_other_components(filename):
       pass
     else:
       if type(x) == m21.meter.TimeSignature:
-        el = [x.offset, "Formula de Compasso", x.ratioString]
+        el = [Fraction(opFrac(x.offset)), "Formula de Compasso", x.ratioString]
       elif type(x) == m21.key.Key:
-        el = [x.offset, "Tonalidade", x.tonic.name + " " + x.mode]
+        el = [Fraction(opFrac(x.offset)), "Tonalidade", x.tonic.name + " " + x.mode]
       elif type(x) == m21.tempo.MetronomeMark: 
-        el = [x.offset, "Tempo", x.number]
+        el = [Fraction(opFrac(x.offset)), "Tempo", x.number]
       if el not in result:
         result.append(el)
   return result
@@ -38,10 +39,10 @@ def extract_parts(filename):
 
 def parse_element(el, noTups=False):
   if noTups == False:
-    dur = el.duration.quarterLength
+    dur = Fraction(opFrac(el.duration.quarterLength))
   else:
-    dur = el.duration.quarterLengthNoTuplets
-  off = el.offset
+    dur = Fraction(opFrac(el.duration.quarterLengthNoTuplets))
+  off = Fraction(opFrac(el.offset))
   tie_type = el.tie
   if tie_type != None:
     tie_type = tie_type.type

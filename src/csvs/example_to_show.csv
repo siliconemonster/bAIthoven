@@ -1,22 +1,23 @@
-0.0,Tempo,120.0
-0.0,Formula de Compasso,4/4
-0.0,Tuplet 9:8,Parte_1,"[['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None]]"
-0.0,Rest,Parte_2,4.0,0,
-0.0,Chord,Parte_3,2.0,"[47, 50, 53]",
-39/160,Tuplet 9:8,Parte_1,"[['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None], ['Note', 0.03125, 71, None]]"
-39/80,Rest,Parte_1,0.5,0,
-79/80,Note,Parte_1,1.0,74,
-159/80,Note,Parte_1,2.0,72,
-2.0,Tuplet 3:2,Parte_3,"[['Note', 1.0, 50, None], ['Chord', 1.0, [53, 57], None], ['Chord', 1.0, [47, 50], None]]"
-319/80,Tuplet 5:4,Parte_1,"[['Rest', 0.015625, 0, None]]"
-4.0,Note,Parte_1,1.0,69,
-4.0,Note,Parte_2,0.5,65,
-4.0,Chord,Parte_3,2.0,"[41, 45, 48]",
-4.5,Note,Parte_2,0.5,62,
-5.0,Rest,Parte_1,1.0,0,
-5.0,Chord,Parte_2,0.5,"[62, 65, 69]",
-5.5,Rest,Parte_2,0.5,0,
-6.0,Chord,Parte_1,1.5,"[72, 76, 79]",
-6.0,Rest,Parte_2,2.0,0,
-6.0,Rest,Parte_3,2.0,0,
-7.5,Rest,Parte_1,0.5,0,
+0,Tempo,120.0
+0,Formula de Compasso,4/4
+0,Tuplet 9:8,Parte_1,"[['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None]]"
+0,Rest,Parte_2,4,0,
+0,Chord,Parte_3,2,"[47, 50, 53]",
+39/160,Tuplet 9:8,Parte_1,"[['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None], ['Note', Fraction(1, 32), 71, None]]"
+39/80,Rest,Parte_1,1/2,0,
+79/80,Note,Parte_1,1,74,
+159/80,Note,Parte_1,2,72,
+2,Tuplet 3:2,Parte_3,"[['Note', Fraction(1, 1), 50, None], ['Chord', Fraction(1, 1), [53, 57], None], ['Chord', Fraction(1, 1), [47, 50], None]]"
+319/80,Tuplet 5:4,Parte_1,"[['Rest', Fraction(1, 64), 0, None]]"
+4,Note,Parte_1,1,69,
+4,Note,Parte_2,1/2,65,
+4,Chord,Parte_3,2,"[41, 45, 48]",start
+9/2,Note,Parte_2,1/2,62,
+5,Rest,Parte_1,1,0,
+5,Chord,Parte_2,1/2,"[62, 65, 69]",
+11/2,Rest,Parte_2,1/2,0,
+6,Chord,Parte_1,3/2,"[72, 76, 79]",
+6,Rest,Parte_2,2,0,
+6,Chord,Parte_3,1,"[41, 45, 48]",stop
+7,Rest,Parte_3,1,0,
+15/2,Rest,Parte_1,1/2,0,

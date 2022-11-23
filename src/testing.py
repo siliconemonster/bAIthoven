@@ -1,4 +1,3 @@
-
 from funcs import *
 import music21 as m21
 import os
@@ -96,9 +95,9 @@ def show_new_piece(score):
 ### e reconstruir a mesma peça a partir dos dados extraídos
 
 if __name__ == "__main__":
-    filename = "op13movII.xml"
-    final_list = extract_data(filename, new_filename="op13movII")
-    score = create_piece(final_list)
-    show_new_piece(score)
+    filename = "OPUS 02 N1\\op2movI.xml"
+    final_list = extract_data(filename, new_filename="op02movI")
 
 
+    #score = create_piece(final_list)
+    #show_new_piece(score)

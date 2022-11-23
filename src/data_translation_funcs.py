@@ -70,7 +70,7 @@ def rebuild_fractions(no_fractions_list):
   
   for event in no_fractions_list:
     if event[1] == 1:
-      offset = float(event[0])
+      offset = int(event[0])
     else:
       offset = Fraction(event[0],event[1])
 
@@ -78,7 +78,7 @@ def rebuild_fractions(no_fractions_list):
       info = [offset, event[2], event[3]]
     else:
       if event[5] == 1:
-        duration = float(event[4])
+        duration = int(event[4])
       else:
         duration = Fraction(event[4],event[5])
       info = [offset, event[2], event[3], duration, event[6], event[7]]
@@ -203,10 +203,6 @@ def prepare_for_learning(whole_list):
   print(no_chords_list)
   print()
 
-  print('This is the sonate with all the tuplets and chords separated')
-  print(no_chords_list)
-  print()
-
   no_fractions_list = remove_fractions(no_chords_list)
 
   print('This is the sonate with the time information split into num and denom')
@@ -316,44 +312,35 @@ def rearrange_received_data():
 
 def rearrange_outcome_sonata(sonata):
 
+    print('BRAND NEW FUNCTION HERE HELLO-O')
+    print()
+
+    print('This is the sonata:')
+    print(sonata)
+    print()
+
     no_chord_no_tuplet_output = []
 
     second_positions_4_pos = 'Tempo', 'Tonalidade', 'Formula de Compasso'
     second_positions_8_pos = 'Note', 'Rest', 'Chord'
 
     for index, element in enumerate(sonata):
-        if any(keyword in element for keyword in second_positions_4_pos):
-            info = [sonata[index-2], sonata[index-1], element, sonata[index+1]]
-            no_chord_no_tuplet_output.append(info)
-        elif 'Tuplet' in element:
-            info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
-            no_chord_no_tuplet_output.append(info)
-        elif any(keyword in element for keyword in second_positions_8_pos):
-            info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
-            no_chord_no_tuplet_output.append(info)
+      if isinstance(element, str):
+          if any(keyword in element for keyword in second_positions_4_pos):
+              info = [sonata[index-2], sonata[index-1], element, sonata[index+1]]
+              no_chord_no_tuplet_output.append(info)
+          elif 'Tuplet' in element:
+              info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
+              no_chord_no_tuplet_output.append(info)
+          elif any(keyword in element for keyword in second_positions_8_pos):
+              info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
+              no_chord_no_tuplet_output.append(info)
 
-    print('This is the unflattened list without eval:')
+    print('This is the unflattened list:')
     print(no_chord_no_tuplet_output)
     print()
 
-    no_chord_no_tuplet_output_eval = []
-    for event in no_chord_no_tuplet_output:
-        row = []
-        for index, element in enumerate(event):
-            if index == 2 or index == 3:
-                row.append(element)
-            elif index == 7 and element != 'None':
-                row.append(element)
-            elif element == 'None':
-                row.append(None)
-            else: row.append(eval(element))
-        no_chord_no_tuplet_output_eval.append(row)
-
-    print('This is the unflattened list with eval:')
-    print(no_chord_no_tuplet_output_eval)
-    print()
-
-    outcome = prepare_for_rebuilding(no_chord_no_tuplet_output_eval)
+    outcome = prepare_for_rebuilding(no_chord_no_tuplet_output)
 
     print('This is the outcome:')
     print(outcome)

@@ -9,7 +9,7 @@ def find_other_components(filename):
   piece = m21.converter.parse(filename).voicesToParts()
   result = []
   flat_piece = piece.flat
-  wanted_types = (m21.meter.TimeSignature, m21.key.Key, m21.tempo.MetronomeMark, m21.bar.Repeat)
+  wanted_types = (m21.meter.TimeSignature, m21.key.Key, m21.tempo.MetronomeMark)
   for x in flat_piece:
     if type(x) not in wanted_types:
       pass

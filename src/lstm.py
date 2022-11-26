@@ -23,7 +23,7 @@ def train_network(sonates, n_vocab):
 
 def prepare_sequences(sonates, n_vocab):
     """ Prepare the sequences used by the Neural Network """
-    sequence_length = 100
+    sequence_length = 700
 
     # get all pitch names
     pitchnames = set(item for item in sonates)
@@ -87,7 +87,7 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=200, batch_size=128, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=50, batch_size=128, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()

@@ -98,7 +98,7 @@ def parse_with_tuplets(parte):
     else:
       parsed_el = [parse_element(y,noTups=True) for y in x]
       off = parsed_el[0][0]
-      dur_mult = x[0].duration.tuplets[0].tupletMultiplier()
+      dur_mult = Fraction(x[0].duration.tuplets[0].tupletMultiplier())
       num = dur_mult.numerator
       den = dur_mult.denominator
       ratio_string = str(den) + ":" + str(num)

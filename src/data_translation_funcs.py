@@ -186,9 +186,9 @@ def prepare_for_learning(whole_list):
     else:
       no_tuplets_list.append(event)
 
-  print('This is the sonate with all the tuplets separated')
-  print(no_tuplets_list)
-  print()
+  #print('This is the sonate with all the tuplets separated')
+  #print(no_tuplets_list)
+  #print()
 
   no_chords_list = []
   for event in no_tuplets_list:
@@ -199,15 +199,15 @@ def prepare_for_learning(whole_list):
     else:
       no_chords_list.append(event)
 
-  print('This is the sonate with all the tuplets and chords separated')
-  print(no_chords_list)
-  print()
+  #print('This is the sonate with all the tuplets and chords separated')
+  #print(no_chords_list)
+  #print()
 
   no_fractions_list = remove_fractions(no_chords_list)
 
-  print('This is the sonate with the time information split into num and denom')
-  print(no_fractions_list)
-  print()
+  #print('This is the sonate with the time information split into num and denom')
+  #print(no_fractions_list)
+  #print()
 
   return no_fractions_list
 
@@ -215,34 +215,23 @@ def prepare_for_rebuilding(no_fractions_list):
 
   no_chords_list = rebuild_fractions(no_fractions_list)
 
-  print('This is the sonate with the offset and duration rebuilt')
-  print(no_chords_list)
-  print()
+  #print('This is the sonate with the offset and duration rebuilt')
+  #print(no_chords_list)
+  #print()
 
   chords_list = rejoin_chords(no_chords_list)
 
-  print('This is the sonate with all the chords rebuilt')
-  print(chords_list)
-  print()
+  #print('This is the sonate with all the chords rebuilt')
+  #print(chords_list)
+  #print()
 
   rebuilt_list = rejoin_tuplets(chords_list)
   
-  print('This is the sonate with all the chords and tuplets rebuilt')
-  print(rebuilt_list)
-  print()
+  #print('This is the sonate with all the chords and tuplets rebuilt')
+  #print(rebuilt_list)
+  #print()
 
   return rebuilt_list
-
-'''path_to_read = os.path.join('converted_sonates','csv_file.csv')
-
-sonate = read_from_csv(path_to_read)
-#print(sonate)
-outcome = prepare_for_learning(sonate)
-
-prepare_for_rebuilding(outcome)
-write_to_csv(outcome)'''
-
-
 
 def rearrange_received_data():
 
@@ -260,7 +249,7 @@ def rearrange_received_data():
             os.mkdir('outcome_txts')
         path_and_name = os.path.join("outcome_txts", txt_name)
 
-        final_list = extract_data(filename, new_filename=path_and_name)
+        extract_data(filename, new_filename=path_and_name)
 
         print(file + ' correctly transformed')
 
@@ -284,16 +273,18 @@ def rearrange_received_data():
         path_to_read = os.path.join(csv_path)
 
         sonate = read_from_csv(path_to_read)
-        print('This is the sonate that was read from the CSV:')
-        print(sonate)
-        print()
+        #print('This is the sonate that was read from the CSV:')
+        #print(sonate)
+        #print()
         outcome = prepare_for_learning(sonate)
 
         list_of_every_piece.append(outcome)
 
     flatten_list = []
     string_of_every_piece = ''
+    count = 0
     for sonate in list_of_every_piece:
+        count = count + 1
         for event in sonate:
             for element in event:
                 flatten_list.append(element)
@@ -301,23 +292,28 @@ def rearrange_received_data():
 
     string_of_every_piece = string_of_every_piece[:-1]
 
-    print('These are the flatten list and the flatten string:')
-    print(flatten_list)
-    print(string_of_every_piece)
-    print()
+    #print('These are the flatten list and the flatten string:')
+    #print(flatten_list)
+    #print(string_of_every_piece)
+    #print()
 
     n_vocab = len(set(flatten_list))
+    print(n_vocab)
+
+    print(count)
+
+    print('\nAll the pieces have been correctly collected.\n')
     return flatten_list, n_vocab
 
 
 def rearrange_outcome_sonata(sonata):
 
-    print('BRAND NEW FUNCTION HERE HELLO-O')
-    print()
+    #print('BRAND NEW FUNCTION HERE HELLO-O')
+    #print()
 
-    print('This is the sonata:')
-    print(sonata)
-    print()
+    #print('This is the sonata:')
+    #print(sonata)
+    #print()
 
     no_chord_no_tuplet_output = []
 
@@ -345,6 +341,11 @@ def rearrange_outcome_sonata(sonata):
     print('This is the outcome:')
     print(outcome)
     print()
+
+    with open('outcome_TBConverted.txt', 'w') as f:
+      for item in outcome:
+        f.write(str(item))
+        f.write('\n')
 
 def create_piece(outcome):
   #score = create_piece(outcome)

@@ -177,8 +177,18 @@ def write_to_csv(lista):
     write.writerows(lista)
 
 def prepare_for_learning(whole_list):
-  no_tuplets_list = []
+  no_header_list = []
   for event in whole_list:
+    if 'Tempo' in event[1] or 'Formula de Compasso' in event[1]:
+      continue
+    else: no_header_list.append(event)
+
+  # print('This is the sonate without a header')
+  # print(no_header_list)
+  # print()
+
+  no_tuplets_list = []
+  for event in no_header_list:
     if 'Tuplet' in event[1]:
       separated_tuplets = separate_tuplets(event)
       for element in separated_tuplets:

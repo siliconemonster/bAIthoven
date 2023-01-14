@@ -16,29 +16,36 @@ def generate(sonates, n_vocab):
     """ Generate a piano midi file """
     #load the notes used to train the model
 
-    # Get all pitch names
-    pitchnames = set(item for item in sonates)
+    # Get all event parameters
+    event_parameters = set(item for item in sonates)
+    # map between event parameters and integers
+    event_to_int_dict = dict((event, number) for number, event in enumerate(event_parameters))
+    # map between integers and event parameters
+    int_to_event_dict = dict(zip(event_to_int_dict.values(), event_to_int_dict.keys()))
 
-    network_input, normalized_input = prepare_sequences(sonates, pitchnames, n_vocab)
+    network_input, normalized_input = prepare_sequences(sonates, event_to_int_dict, n_vocab)
     model = create_network(normalized_input, n_vocab)
-    prediction_output = generate_notes(model, network_input, pitchnames, n_vocab)
+    prediction_output = generate_notes(model, network_input, int_to_event_dict, n_vocab)
     print(prediction_output)
+
+    with open('prediction_output.txt', 'w') as f:
+      for item in prediction_output:
+        f.write(str(item))
+        f.write('\n')
+        
     #create_midi(prediction_output)
     return prediction_output
 
-def prepare_sequences(sonates, pitchnames, n_vocab):
+def prepare_sequences(sonates, event_to_int_dict, n_vocab):
     """ Prepare the sequences used by the Neural Network """
-    # map between notes and integers and back
-    event_to_int = dict((note, number) for number, note in enumerate(pitchnames))
-
     sequence_length = 100
     network_input = []
     output = []
     for i in range(0, len(sonates) - sequence_length, 1):
         sequence_in = sonates[i:i + sequence_length]
         sequence_out = sonates[i + sequence_length]
-        network_input.append([event_to_int[char] for char in sequence_in])
-        output.append(event_to_int[sequence_out])
+        network_input.append([event_to_int_dict[char] for char in sequence_in])
+        output.append(event_to_int_dict[sequence_out])
 
     n_patterns = len(network_input)
 
@@ -75,12 +82,10 @@ def create_network(network_input, n_vocab):
 
     return model
 
-def generate_notes(model, network_input, pitchnames, n_vocab):
+def generate_notes(model, network_input, int_to_event_dict, n_vocab):
     """ Generate notes from the neural network based on a sequence of notes """
     # pick a random sequence from the input as a starting point for the prediction
     start = numpy.random.randint(0, len(network_input)-1)
-
-    int_to_note = dict((number, note) for number, note in enumerate(pitchnames))
 
     pattern = network_input[start]
     prediction_output = []
@@ -93,7 +98,7 @@ def generate_notes(model, network_input, pitchnames, n_vocab):
         prediction = model.predict(prediction_input, verbose=0)
 
         index = numpy.argmax(prediction)
-        result = int_to_note[index]
+        result = int_to_event_dict[index]
         prediction_output.append(result)
 
         pattern.append(index)
@@ -137,5 +142,5 @@ def create_midi(prediction_output):
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()
     predicton_output = generate(sonates, n_vocab)
-    #outcome = rearrange_outcome_sonata(predicton_output)
+    outcome = rearrange_outcome_sonata(predicton_output)
     #create_piece(outcome)

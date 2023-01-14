@@ -342,6 +342,11 @@ def rearrange_outcome_sonata(sonata):
     print(outcome)
     print()
 
+    with open('outcome_TBConverted.txt', 'w') as f:
+      for item in outcome:
+        f.write(str(item))
+        f.write('\n')
+
 def create_piece(outcome):
   #score = create_piece(outcome)
   #show_new_piece(score)

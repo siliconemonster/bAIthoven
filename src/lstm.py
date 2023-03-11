@@ -32,7 +32,7 @@ def prepare_sequences(sonates, n_vocab):
      # create a dictionary to map pitches to integers
     event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
     with open("dictionary.txt", "w") as fp:
-        json.dump(event_to_int, fp)
+        json.dump(event_to_int, fp, indent = True)
 
     network_input = []
     network_output = []

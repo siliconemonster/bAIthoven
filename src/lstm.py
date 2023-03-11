@@ -10,6 +10,7 @@ from keras.layers import Activation
 from keras.layers import BatchNormalization as BatchNorm
 from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
+import json
 
 from data_translation_funcs import *
 
@@ -30,6 +31,8 @@ def prepare_sequences(sonates, n_vocab):
 
      # create a dictionary to map pitches to integers
     event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
+    with open("dictionary.txt", "w") as fp:
+        json.dump(event_to_int, fp)
 
     network_input = []
     network_output = []
@@ -87,7 +90,7 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=50, batch_size=50, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=50, batch_size=750, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()

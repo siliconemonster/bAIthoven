@@ -72,6 +72,14 @@ def create_network(network_input, n_vocab):
     model.add(Activation('relu'))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
@@ -90,7 +98,7 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=50, batch_size=750, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=50, batch_size=512, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()

@@ -6,6 +6,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import LSTM
+from keras.layers import CuDNNLSTM 
 from keras.layers import Activation
 from keras.layers import BatchNormalization as BatchNorm
 from keras.utils import np_utils
@@ -64,16 +65,8 @@ def create_network(network_input, n_vocab):
         recurrent_dropout=0.3,
         return_sequences=True
     ))
-    model.add(LSTM(512, return_sequences=True, recurrent_dropout=0.3,))
-    model.add(LSTM(512))
-    model.add(BatchNorm())
-    model.add(Dropout(0.3))
-    model.add(Dense(256))
-    model.add(Activation('relu'))
-    model.add(BatchNorm())
-    model.add(Dropout(0.3))
-    model.add(Dense(256))
-    model.add(Activation('relu'))
+    model.add(CuDNNLSTM(512, return_sequences=True, recurrent_dropout=0.3,))
+    model.add(CuDNNLSTM(512))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
     model.add(Dense(256))

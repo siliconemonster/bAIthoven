@@ -319,10 +319,9 @@ def rearrange_received_data():
     #print(string_of_every_piece)
     #print()
 
+    print('\nAll the', count, 'pieces have been correctly collected.')
     n_vocab = len(set(flatten_list))
-    print('The size of the vocabulary is of', n_vocab, 'elements.')
-
-    print('\nAll the', count, 'pieces have been correctly collected.\n')
+    print('The size of the vocabulary is of', n_vocab, 'elements.\n')
     return flatten_list, n_vocab
 
 

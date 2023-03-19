@@ -10,6 +10,7 @@ from keras.layers import Activation
 from keras.layers import BatchNormalization as BatchNorm
 from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
+import json
 
 from data_translation_funcs import *
 
@@ -23,13 +24,16 @@ def train_network(sonates, n_vocab):
 
 def prepare_sequences(sonates, n_vocab):
     """ Prepare the sequences used by the Neural Network """
-    sequence_length = 100
+    sequence_length = 700
 
     # get all pitch names
     pitchnames = set(item for item in sonates)
 
      # create a dictionary to map pitches to integers
     event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
+    print('The dictionary has', len(event_to_int), 'key-value pairs.\n')
+    with open("dictionary.txt", "w") as fp:
+        json.dump(event_to_int, fp, indent = True)
 
     network_input = []
     network_output = []
@@ -69,6 +73,14 @@ def create_network(network_input, n_vocab):
     model.add(Activation('relu'))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
@@ -87,8 +99,9 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=200, batch_size=128, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=50, batch_size=512, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()
+    print('All the sonates together add up to', len(sonates), 'entries.')
     train_network(sonates, n_vocab)

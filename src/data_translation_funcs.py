@@ -303,20 +303,15 @@ def rearrange_received_data():
         list_of_every_piece.append(outcome)
 
     flatten_list = []
-    string_of_every_piece = ''
     count = 0
     for sonate in list_of_every_piece:
-        count = count + 1
-        for event in sonate:
-            for element in event:
-                flatten_list.append(element)
-                string_of_every_piece = string_of_every_piece + str(element) + ','
+      count = count + 1
+      for event in sonate:
+        for element in event:
+          flatten_list.append(element)
 
-    string_of_every_piece = string_of_every_piece[:-1]
-
-    #print('These are the flatten list and the flatten string:')
+    #print('This is the flatten list:')
     #print(flatten_list)
-    #print(string_of_every_piece)
     #print()
 
     print('\nAll the', count, 'pieces have been correctly collected.')

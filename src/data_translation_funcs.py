@@ -320,19 +320,13 @@ def rearrange_received_data():
     #print()
 
     n_vocab = len(set(flatten_list))
-    print(n_vocab)
+    print('The size of the vocabulary is of', n_vocab, 'elements.')
 
-    print(count)
-
-    print('\nAll the pieces have been correctly collected.\n')
+    print('\nAll the', count, 'pieces have been correctly collected.\n')
     return flatten_list, n_vocab
 
 
 def rearrange_outcome_sonata(sonata):
-
-    #print('BRAND NEW FUNCTION HERE HELLO-O')
-    #print()
-
     #print('This is the sonata:')
     #print(sonata)
     #print()

@@ -31,6 +31,7 @@ def prepare_sequences(sonates, n_vocab):
 
      # create a dictionary to map pitches to integers
     event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
+    print('The dictionary has', len(event_to_int), 'key-value pairs.\n')
     with open("dictionary.txt", "w") as fp:
         json.dump(event_to_int, fp, indent = True)
 
@@ -98,8 +99,9 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=50, batch_size=512, callbacks=callbacks_list)
+    #model.fit(network_input, network_output, epochs=50, batch_size=512, callbacks=callbacks_list)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()
+    print('All the sonates together add up to', len(sonates), 'entries.')
     train_network(sonates, n_vocab)

@@ -98,6 +98,9 @@ def train(model, network_input, network_output):
         mode='min'
     )
     callbacks_list = [checkpoint]
+    if os.path.exists(filepath):
+        print(f"Loading weights from {filepath}")
+        model.load_weights(filepath)
 
     model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list)
 

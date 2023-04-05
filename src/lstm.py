@@ -98,10 +98,10 @@ def train(model, network_input, network_output):
         mode='min'
     )
     callbacks_list = [checkpoint]
-    initial_wieght_file = 'weights-from-previous-run.hdf5'
-    if os.path.exists(initial_wieght_file):
-        print(f"Loading weights from {initial_wieght_file}")
-        model.load_weights(initial_wieght_file)
+    initial_weight_file = 'weights-from-previous-run.hdf5'
+    if os.path.exists(initial_weight_file):
+        print(f"Loading weights from {initial_weight_file}")
+        model.load_weights(initial_weight_file)
 
     model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list)
 

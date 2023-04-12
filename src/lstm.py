@@ -85,6 +85,9 @@ def create_network(network_input, n_vocab):
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
+    # Load the weights to each node
+    model.load_weights('weights-improvement-193-0.1417-bigger.hdf5')
+
     return model
 
 def train(model, network_input, network_output):
@@ -92,18 +95,15 @@ def train(model, network_input, network_output):
     filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
+        save_weights_only = True,
         monitor='loss',
         verbose=0,
         save_best_only=True,
         mode='min'
     )
     callbacks_list = [checkpoint]
-    initial_weight_file = 'weights-from-previous-run.hdf5'
-    if os.path.exists(initial_weight_file):
-        print(f"Loading weights from {initial_weight_file}")
-        model.load_weights(initial_weight_file)
 
-    model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list, initial_epoch = 100)
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_received_data()

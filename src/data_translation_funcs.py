@@ -219,19 +219,16 @@ def prepare_for_learning(whole_list):
   #print(no_fractions_list)
   #print()
 
-  converted_none_list = []
+  converted_no_ties_list = []
   for event in no_fractions_list:
-    if event[7] == None:
-      new_event = [event[0], event[1], event[2], event[3], event[4], event[5], event[6], 'None']
-      converted_none_list.append(new_event)
-    else:
-      converted_none_list.append(event)
+    new_event = [event[0], event[1], event[2], event[3], event[4], event[5], event[6]]
+    converted_no_ties_list.append(new_event)
   
-  #print('This is the sonate with None entries converted to string')
-  #print(converted_none_list)
+  #print('This is the sonate without tie info converted to string')
+  #print(converted_no_ties_list)
   #print()
 
-  return converted_none_list
+  return converted_no_ties_list
 
 def prepare_for_rebuilding(no_fractions_list):
 

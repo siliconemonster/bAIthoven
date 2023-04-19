@@ -85,9 +85,6 @@ def create_network(network_input, n_vocab):
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
-    # Load the weights to each node
-    model.load_weights('weights-improvement-193-0.1417-bigger.hdf5')
-
     return model
 
 def train(model, network_input, network_output):

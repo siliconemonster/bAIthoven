@@ -92,7 +92,6 @@ def train(model, network_input, network_output):
     filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
-        save_weights_only = True,
         monitor='loss',
         verbose=0,
         save_best_only=True,

@@ -1,9 +1,12 @@
 import csv
 import os
+import shutil
 from fractions import Fraction
 from testing import *
+import math as m
+import pickle
   
-def read_from_csv(path):
+def _read_from_csv(path):
   with open(path, newline='') as f:
     reader = csv.reader(f)
     data = list(reader)
@@ -28,7 +31,7 @@ def read_from_csv(path):
 
     return whole_list
 
-def separate_tuplets(raw_tuplet):
+def _separate_tuplets(raw_tuplet):
   separated_tupltes = []
   for event in raw_tuplet[3]:
     if 'Chord' in event[0]:
@@ -38,14 +41,14 @@ def separate_tuplets(raw_tuplet):
     separated_tupltes.append(info)
   return separated_tupltes
 
-def separate_chords(raw_chord):
+def _separate_chords(raw_chord):
   separated_chord = []
   for note in raw_chord[4]:
     info = [raw_chord[0], raw_chord[1], raw_chord[2], raw_chord[3], note, raw_chord[5]]
     separated_chord.append(info)
   return separated_chord
 
-def remove_fractions(no_chords_list):
+def _remove_fractions(no_chords_list):
   no_fractions_list = []
 
   for event in no_chords_list:
@@ -63,7 +66,22 @@ def remove_fractions(no_chords_list):
 
   return no_fractions_list
 
-def rebuild_fractions(no_fractions_list):
+def _convert_none_to_str(no_fractions_list):
+  converted_none_list = []
+  for event in no_fractions_list:
+    if event[7] == None:
+      new_event = [event[0], event[1], event[2], event[3], event[4], event[5], event[6], 'None']
+      converted_none_list.append(new_event)
+    else:
+      converted_none_list.append(event)
+
+  #print('This is the sonate with None entries converted to string')
+  #print(converted_none_list)
+  #print()
+
+  return converted_none_list
+
+def _rebuild_fractions(no_fractions_list):
   no_chords_list = []
 
   header = 'Tempo', 'Tonalidade', 'Formula de Compasso'
@@ -86,7 +104,7 @@ def rebuild_fractions(no_fractions_list):
 
   return no_chords_list
 
-def rejoin_chords(whole_piece):
+def _rejoin_chords(whole_piece):
   flag_tuplet_chord = 1
   chord_list = []
   for index, event in enumerate(whole_piece):
@@ -127,7 +145,7 @@ def rejoin_chords(whole_piece):
 
   return whole_piece
 
-def rejoin_tuplets(whole_piece):
+def _rejoin_tuplets(whole_piece):
   flag_tuplet = 1
   tuplet_list = []
   total = 1
@@ -165,18 +183,7 @@ def rejoin_tuplets(whole_piece):
 
   return whole_piece
 
-def write_to_csv(lista):
-
-  if not os.path.isdir('csv_new_approach'):
-    os.mkdir('csv_new_approach')
-  csv_path = os.path.join('csv_new_approach', 'outcome.csv')
-
-
-  with open(csv_path, 'w', newline='') as f:
-    write = csv.writer(f)
-    write.writerows(lista)
-
-def prepare_for_learning(whole_list):
+def _prepare_for_learning(whole_list):
   no_header_list = []
   for event in whole_list:
     if 'Tempo' in event[1] or 'Formula de Compasso' in event[1]:
@@ -190,7 +197,7 @@ def prepare_for_learning(whole_list):
   no_tuplets_list = []
   for event in no_header_list:
     if 'Tuplet' in event[1]:
-      separated_tuplets = separate_tuplets(event)
+      separated_tuplets = _separate_tuplets(event)
       for element in separated_tuplets:
         no_tuplets_list.append(element)
     else:
@@ -203,7 +210,7 @@ def prepare_for_learning(whole_list):
   no_chords_list = []
   for event in no_tuplets_list:
     if 'Chord' in event[1]:
-      separated_chords = separate_chords(event)
+      separated_chords = _separate_chords(event)
       for element in separated_chords:
         no_chords_list.append(element)
     else:
@@ -213,38 +220,32 @@ def prepare_for_learning(whole_list):
   #print(no_chords_list)
   #print()
 
-  no_fractions_list = remove_fractions(no_chords_list)
+  no_fractions_list = _remove_fractions(no_chords_list)
 
   #print('This is the sonate with the time information split into num and denom')
   #print(no_fractions_list)
   #print()
 
-  converted_no_ties_list = []
-  for event in no_fractions_list:
-    new_event = [event[0], event[1], event[2], event[3], event[4], event[5], event[6]]
-    converted_no_ties_list.append(new_event)
-  
-  #print('This is the sonate without tie info converted to string')
-  #print(converted_no_ties_list)
-  #print()
+  converted_none_list = _convert_none_to_str(no_fractions_list)
 
-  return converted_no_ties_list
 
-def prepare_for_rebuilding(no_fractions_list):
+  return converted_none_list
 
-  no_chords_list = rebuild_fractions(no_fractions_list)
+def _prepare_for_rebuilding(no_fractions_list):
+
+  no_chords_list = _rebuild_fractions(no_fractions_list)
 
   #print('This is the sonate with the offset and duration rebuilt')
   #print(no_chords_list)
   #print()
 
-  chords_list = rejoin_chords(no_chords_list)
+  chords_list = _rejoin_chords(no_chords_list)
 
   #print('This is the sonate with all the chords rebuilt')
   #print(chords_list)
   #print()
 
-  rebuilt_list = rejoin_tuplets(chords_list)
+  rebuilt_list = _rejoin_tuplets(chords_list)
   
   #print('This is the sonate with all the chords and tuplets rebuilt')
   #print(rebuilt_list)
@@ -252,11 +253,145 @@ def prepare_for_rebuilding(no_fractions_list):
 
   return rebuilt_list
 
+def _delete_temp_folders():
+  shutil.rmtree('csvs')
+  shutil.rmtree('outcome_txts')  
+
+def _save_list_to_file(real_list, file_name):
+  with open(file_name, 'w') as fp:
+    for item in real_list:
+      # write each item on a new line
+      fp.write("%s\n" % item)
+
+def _order_offsets(non_linear_no_denom_list):
+
+  update_offset = False
+  linear_no_denom_list = []
+
+  for sonate in non_linear_no_denom_list:
+    this_sonate = []
+    for event in sonate:
+      if update_offset == False:
+        this_sonate.append(event)
+      else:
+        temp_offset = event[0] + highest_offset + 1920 #give it an entire measure in between songs
+        temp_event = [temp_offset, event[1], event[2], event[3], event[4], event[5]]
+        this_sonate.append(temp_event)
+    update_offset = True
+    linear_no_denom_list.append(this_sonate)
+    highest_offset = this_sonate[-1][0]
+
+  return linear_no_denom_list
+
+def _remove_denom(all_sonates_list):
+  offset_denom = set()
+  duration_denom = set()
+  for sonate in all_sonates_list:
+    for event in sonate:
+      offset_denom.add(event[1])
+      duration_denom.add(event[5])
+
+  offset_lcm = m.lcm(*offset_denom)
+  duration_lcm = m.lcm(*duration_denom)
+
+  lcm_dict = {'offset_lcm': offset_lcm, 'duration_lcm': duration_lcm}
+  with open('offsets.pkl', 'wb') as fp:
+    pickle.dump(lcm_dict, fp)
+
+
+  non_linear_no_denom_list = []
+  for sonate in all_sonates_list:
+    no_denom_sonate = []
+    for event in sonate:
+      offset_quot = offset_lcm / event[1]
+      new_offset_num = int(event[0] * offset_quot)
+      duration_quot = duration_lcm / event[5]
+      new_duration_num = int(event[4] * duration_quot)
+
+      temp = [new_offset_num, event[2], event[3], new_duration_num, event[6], event[7]]
+      no_denom_sonate.append(temp)
+    non_linear_no_denom_list.append(no_denom_sonate)
+
+  linear_no_denom_list = _order_offsets(non_linear_no_denom_list)
+
+  #print('This is the sonate only with numerators')
+  #print(linear_no_denom_list)
+  #print()
+
+  #_save_list_to_file(linear_no_denom_list, 'no_denom_list.txt')
+
+  return linear_no_denom_list
+
+def _translate_to_int(no_denom_list):
+
+  event_name_list = []
+  part_list = []
+  tie_list= []
+
+  print(no_denom_list)  
+  for sonate in no_denom_list:
+    for event in sonate:
+      event_name_list.append(event[1])
+      part_list.append(event[2])
+      tie_list.append(event[5])
+
+  event_name_set = sorted(set(item for item in event_name_list))
+  part_set = sorted(set(item for item in part_list))
+  tie_set = sorted(set(item for item in tie_list))
+
+  event_name_dict = dict((event, number) for number, event in enumerate(event_name_set))
+  part_dict = dict((event, number) for number, event in enumerate(part_set))
+  tie_dict = dict((event, number) for number, event in enumerate(tie_set))
+
+  with open('event_name_dict.pkl', 'wb') as fp:
+    pickle.dump(event_name_dict, fp)
+  with open('part_dict.pkl', 'wb') as fp:
+    pickle.dump(part_dict, fp)
+  with open('tie_dict.pkl', 'wb') as fp:
+    pickle.dump(tie_dict, fp)
+
+  all_sonates_int_list = []
+  for sonate in no_denom_list:
+    sonate_int_list = []
+    for event in sonate:
+      temp_event_name = event_name_dict[event[1]]
+      temp_part = part_dict[event[2]]
+      temp_tie = tie_dict[event[5]]
+      temp_full_event = [event[0], temp_event_name, temp_part, event[3], event[4]]
+      sonate_int_list.append(temp_full_event)
+    all_sonates_int_list.append(sonate_int_list)
+
+  #print('This is the sonate only with integers')
+  #print(all_sonates_int_list)
+  #print()
+
+  #_save_list_to_file(all_sonates_int_list, 'all_sonates_int_list.txt')
+
+  return all_sonates_int_list
+
+def _flatten_list(all_sonates_int_list):
+
+  flattened_list = []
+  count = 0
+  for sonate in all_sonates_int_list:
+    count = count + 1
+    for event in sonate:
+      for element in event:
+        flattened_list.append(element)
+
+  #print('This is the flatten list:')
+  #print(flattened_list)
+  #print()
+
+  #_save_list_to_file(flattened_list, 'flattened_list.txt')
+
+  return flattened_list, count
+
 def rearrange_received_data():
 
     xml_path = os.path.join("pieces")
 
-    list_of_every_piece = []
+    all_sonates_list = []
 
 
     for file in os.listdir(xml_path):
@@ -291,30 +426,26 @@ def rearrange_received_data():
 
         path_to_read = os.path.join(csv_path)
 
-        sonate = read_from_csv(path_to_read)
+        sonate = _read_from_csv(path_to_read)
         #print('This is the sonate that was read from the CSV:')
         #print(sonate)
         #print()
-        outcome = prepare_for_learning(sonate)
+        outcome = _prepare_for_learning(sonate)
 
-        list_of_every_piece.append(outcome)
+        all_sonates_list.append(outcome)
 
-    flatten_list = []
-    count = 0
-    for sonate in list_of_every_piece:
-      count = count + 1
-      for event in sonate:
-        for element in event:
-          flatten_list.append(element)
-
-    #print('This is the flatten list:')
-    #print(flatten_list)
-    #print()
+    _delete_temp_folders()
+    
+    #_save_list_to_file(all_sonates_list, 'all_sonates_list.txt')
+    no_denom_list = _remove_denom(all_sonates_list)
+    all_sonates_int_list = _translate_to_int(no_denom_list)  
+    flattened_list, count = _flatten_list(all_sonates_int_list) 
 
     print('\nAll the', count, 'pieces have been correctly collected.')
-    n_vocab = len(set(flatten_list))
+    n_vocab = len(set(flattened_list))
     print('The size of the vocabulary is of', n_vocab, 'elements.\n')
-    return flatten_list, n_vocab
+    
+    return flattened_list, n_vocab
 
 
 def rearrange_outcome_sonata(sonata):
@@ -339,15 +470,15 @@ def rearrange_outcome_sonata(sonata):
               info = [sonata[index-2], sonata[index-1], element, sonata[index+1],sonata[index+2],sonata[index+3],sonata[index+4],sonata[index+5]]
               no_chord_no_tuplet_output.append(info)
 
-    print('This is the unflattened list:')
-    print(no_chord_no_tuplet_output)
-    print()
+    #print('This is the unflattened list:')
+    #print(no_chord_no_tuplet_output)
+    #print()
 
-    outcome = prepare_for_rebuilding(no_chord_no_tuplet_output)
+    outcome = _prepare_for_rebuilding(no_chord_no_tuplet_output)
 
-    print('This is the outcome:')
-    print(outcome)
-    print()
+    #print('This is the outcome:')
+    #print(outcome)
+    #print()
 
     with open('outcome_TBConverted.txt', 'w') as f:
       for item in outcome:
@@ -358,3 +489,25 @@ def create_piece(outcome):
   #score = create_piece(outcome)
   #show_new_piece(score)
   return
+
+def reverse_translate(sonate):
+  output = []
+
+  with open('offsets.pkl', 'rb') as fp:
+    offsets_dict = pickle.load(fp)
+  with open('event_name_dict.pkl', 'rb') as fp:
+    event_name_dict = pickle.load(fp)
+  inv_event_name_dict = dict(zip(event_name_dict.values(), event_name_dict.keys()))
+  with open('part_dict.pkl', 'rb') as fp:
+    part_dict = pickle.load(fp)
+  inv_part_dict = dict(zip(part_dict.values(), part_dict.keys()))
+
+  for event in sonate:
+    offset = Fraction(event[0],offsets_dict['offset_lcm'])
+    event_name = inv_event_name_dict[event[1]]
+    part = inv_part_dict[event[2]]
+    duration = Fraction(event[3],offsets_dict['duration_lcm'])
+
+    output.append([offset, event_name, part, duration, event[4], None])
+
+  return output

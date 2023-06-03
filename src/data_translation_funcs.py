@@ -275,7 +275,7 @@ def _order_offsets(non_linear_no_denom_list):
         this_sonate.append(event)
       else:
         temp_offset = event[0] + highest_offset + 1920 #give it an entire measure in between songs
-        temp_event = [temp_offset, event[1], event[2], event[3], event[4]]
+        temp_event = [temp_offset, event[1], event[2], event[3], event[4], event[5]]
         this_sonate.append(temp_event)
     update_offset = True
     linear_no_denom_list.append(this_sonate)
@@ -327,7 +327,8 @@ def _translate_to_int(no_denom_list):
   event_name_list = []
   part_list = []
   tie_list= []
-    
+
+  print(no_denom_list)  
   for sonate in no_denom_list:
     for event in sonate:
       event_name_list.append(event[1])

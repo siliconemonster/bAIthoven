@@ -320,7 +320,7 @@ def _remove_denom(all_sonates_list):
 
   #_save_list_to_file(linear_no_denom_list, 'no_denom_list.txt')
 
-  return linear_no_denom_list
+  return non_linear_no_denom_list
 
 def _translate_to_int(no_denom_list):
 

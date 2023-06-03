@@ -1,2 +1,7 @@
 __pycache__/
 venv/
+dictionary.txt
+event_name_dict.pkl
+offsets.pkl
+part_dict.pkl
+tie_dict.pkl

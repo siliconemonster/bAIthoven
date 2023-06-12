@@ -149,6 +149,4 @@ def create_midi(prediction_output):
 
 if __name__ == '__main__':
     sonates, n_vocab = rearrange_initial_data()
-    predicton_output = generate(sonates, n_vocab)
-    outcome = rearrange_outcome_sonata(predicton_output)
-    #create_piece(outcome)
+    generate(sonates, n_vocab)

@@ -148,7 +148,5 @@ def create_midi(prediction_output):
     midi_stream.write('midi', fp='test_output.mid')
 
 if __name__ == '__main__':
-    sonates, n_vocab = rearrange_received_data()
-    predicton_output = generate(sonates, n_vocab)
-    outcome = rearrange_outcome_sonata(predicton_output)
-    #create_piece(outcome)
+    sonates, n_vocab = rearrange_initial_data()
+    generate(sonates, n_vocab)

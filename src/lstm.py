@@ -92,6 +92,7 @@ def train(model, network_input, network_output):
     filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
+        save_weights_only = True,
         monitor='loss',
         verbose=0,
         save_best_only=True,
@@ -99,9 +100,9 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=50, batch_size=512, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list, initial_epoch = 100)
 
 if __name__ == '__main__':
-    sonates, n_vocab = rearrange_received_data()
+    sonates, n_vocab = rearrange_initial_data()
     print('All the sonates together add up to', len(sonates), 'entries.')
     train_network(sonates, n_vocab)

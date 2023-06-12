@@ -103,6 +103,6 @@ def train(model, network_input, network_output):
     model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list, initial_epoch = 100)
 
 if __name__ == '__main__':
-    sonates, n_vocab = rearrange_received_data()
+    sonates, n_vocab = rearrange_initial_data()
     print('All the sonates together add up to', len(sonates), 'entries.')
     train_network(sonates, n_vocab)

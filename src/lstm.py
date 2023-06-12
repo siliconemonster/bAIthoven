@@ -10,6 +10,7 @@ from keras.layers import Activation
 from keras.layers import BatchNormalization as BatchNorm
 from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
+import json
 
 from data_translation_funcs import *
 
@@ -30,6 +31,9 @@ def prepare_sequences(sonates, n_vocab):
 
      # create a dictionary to map pitches to integers
     event_to_int = dict((event, number) for number, event in enumerate(pitchnames))
+    print('The dictionary has', len(event_to_int), 'key-value pairs.\n')
+    with open("dictionary.txt", "w") as fp:
+        json.dump(event_to_int, fp, indent = True)
 
     network_input = []
     network_output = []
@@ -69,6 +73,14 @@ def create_network(network_input, n_vocab):
     model.add(Activation('relu'))
     model.add(BatchNorm())
     model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(BatchNorm())
+    model.add(Dropout(0.3))
     model.add(Dense(n_vocab))
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
@@ -80,6 +92,7 @@ def train(model, network_input, network_output):
     filepath = "weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
     checkpoint = ModelCheckpoint(
         filepath,
+        save_weights_only = True,
         monitor='loss',
         verbose=0,
         save_best_only=True,
@@ -87,8 +100,9 @@ def train(model, network_input, network_output):
     )
     callbacks_list = [checkpoint]
 
-    model.fit(network_input, network_output, epochs=50, batch_size=128, callbacks=callbacks_list)
+    model.fit(network_input, network_output, epochs=200, batch_size=512, callbacks=callbacks_list, initial_epoch = 100)
 
 if __name__ == '__main__':
-    sonates, n_vocab = rearrange_received_data()
+    sonates, n_vocab = rearrange_initial_data()
+    print('All the sonates together add up to', len(sonates), 'entries.')
     train_network(sonates, n_vocab)

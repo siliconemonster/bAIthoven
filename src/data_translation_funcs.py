@@ -141,26 +141,6 @@ def _save_list_to_file(real_list, file_name):
       # write each item on a new line
       fp.write("%s\n" % item)
 
-def _order_offsets(non_linear_no_denom_list):
-
-  update_offset = False
-  linear_no_denom_list = []
-
-  for sonate in non_linear_no_denom_list:
-    this_sonate = []
-    for event in sonate:
-      if update_offset == False:
-        this_sonate.append(event)
-      else:
-        temp_offset = event[0] + highest_offset + 1920 #give it an entire measure in between songs
-        temp_event = [temp_offset, event[1], event[2], event[3], event[4], event[5]]
-        this_sonate.append(temp_event)
-    update_offset = True
-    linear_no_denom_list.append(this_sonate)
-    highest_offset = this_sonate[-1][0]
-
-  return linear_no_denom_list
-
 def _remove_denom(all_sonates_list):
   offset_denom = set()
   duration_denom = set()
@@ -190,14 +170,6 @@ def _remove_denom(all_sonates_list):
       no_denom_sonate.append(temp)
     non_linear_no_denom_list.append(no_denom_sonate)
 
-  linear_no_denom_list = _order_offsets(non_linear_no_denom_list)
-
-  #print('This is the sonate only with numerators')
-  #print(linear_no_denom_list)
-  #print()
-
-  #_save_list_to_file(linear_no_denom_list, 'no_denom_list.txt')
-
   return non_linear_no_denom_list
 
 def _translate_to_int(no_denom_list):
@@ -206,7 +178,6 @@ def _translate_to_int(no_denom_list):
   part_list = []
   tie_list= []
 
-  print(no_denom_list)  
   for sonate in no_denom_list:
     for event in sonate:
       event_name_list.append(event[1])
@@ -433,6 +404,56 @@ def _rejoin_tuplets(whole_piece):
 
   return whole_piece
 
+def _adjust_output(sonate):
+
+  for event in sonate:
+    if event[4] == 0 and event[1] != 'Rest':
+      event[1] = 'Rest'
+    if event[1] == 'Chord':
+      event[4] = list(sorted(set(event[4])))
+      if 0 in event[4]:
+        if event[4] == [0]:
+          event[1] = 'Rest'
+          event[4] = 0
+          continue
+        else:
+          event[4].remove(0)
+      if len(event[4]) == 1:
+        event[1] = 'Note'
+        event[4] = event[4][0]
+
+  return sonate
+
+def _order_offsets(sonate):
+  parts_last_offset = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
+  full_measure = Fraction(4,1)
+  increment = Fraction(1,100)
+  previous_measure = -1
+
+  for index, event in enumerate(sonate):
+    if index == 0:
+      event[0] = Fraction(0,1)
+      parts_last_offset[int(event[2][-1])] = parts_last_offset[int(event[2][-1])] + event[3]
+    else:
+      event[0] = parts_last_offset[int(event[2][-1])]
+      parts_last_offset[int(event[2][-1])] = parts_last_offset[int(event[2][-1])] + event[3]
+
+    current_measure = int(1 + (event[0]+ increment)/full_measure)
+    if current_measure != previous_measure:
+      index_to_skip = int(event[2][-1])
+      for i in range(len(parts_last_offset)):
+        if i != 0  and i != index_to_skip:
+          if parts_last_offset[i] < (current_measure * full_measure - full_measure):
+            parts_last_offset[i] = current_measure * full_measure - full_measure
+
+    previous_measure = current_measure
+
+  
+    
+
+  return sonate
+
+
 def _add_generic_header(sonate):
   final_piece = []
 
@@ -463,7 +484,14 @@ def rebuild_piece(sonate):
   #print(no_header_list)
   #print()
 
-  piece = _add_generic_header(no_header_list)
+  adjusted_list = _adjust_output(no_header_list)
+  ordered_adjusted_list = _order_offsets(adjusted_list)
+
+  #print('This is the adjusted sonate ')
+  #print(ordered_adjusted_list)
+  #print()
+
+  piece = _add_generic_header(ordered_adjusted_list)
 
   print('This is the produced sonate')
   print(piece)

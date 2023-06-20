@@ -409,6 +409,8 @@ def _adjust_output(sonate):
   for event in sonate:
     if event[4] == 0 and event[1] != 'Rest':
       event[1] = 'Rest'
+    if event[4] != 0 and event[1] == 'Rest':
+      event[1] = 'Note'
     if event[1] == 'Chord':
       event[4] = list(sorted(set(event[4])))
       if 0 in event[4]:
@@ -432,8 +434,7 @@ def _order_offsets(sonate):
   previous_measure = -1
   current_measure = 1
 
-  for index, event in enumerate(sonate):
-    print(parts_next_offset)
+  for event in sonate:
     current_measure = int(1 + (parts_next_offset[int(event[2][-1])]+ increment)/full_measure)
 
     if current_measure != previous_measure:
@@ -447,8 +448,8 @@ def _order_offsets(sonate):
 
     event[0] = parts_next_offset[int(event[2][-1])]
     
-    parts_next_offset[int(event[2][-1])] = event[0] + parts_next_duration[int(event[2][-1])]
     parts_next_duration[int(event[2][-1])] = event[3]
+    parts_next_offset[int(event[2][-1])] = event[0] + parts_next_duration[int(event[2][-1])]
 
     previous_measure = current_measure
 

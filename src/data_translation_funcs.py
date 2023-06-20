@@ -425,26 +425,30 @@ def _adjust_output(sonate):
   return sonate
 
 def _order_offsets(sonate):
-  parts_last_offset = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
+  parts_next_offset = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
+  parts_next_duration = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
   full_measure = Fraction(4,1)
   increment = Fraction(1,100)
   previous_measure = -1
+  current_measure = 1
 
   for index, event in enumerate(sonate):
-    if index == 0:
-      event[0] = Fraction(0,1)
-      parts_last_offset[int(event[2][-1])] = parts_last_offset[int(event[2][-1])] + event[3]
-    else:
-      event[0] = parts_last_offset[int(event[2][-1])]
-      parts_last_offset[int(event[2][-1])] = parts_last_offset[int(event[2][-1])] + event[3]
+    print(parts_next_offset)
+    current_measure = int(1 + (parts_next_offset[int(event[2][-1])]+ increment)/full_measure)
 
-    current_measure = int(1 + (event[0]+ increment)/full_measure)
     if current_measure != previous_measure:
       index_to_skip = int(event[2][-1])
-      for i in range(len(parts_last_offset)):
+      for i in range(len(parts_next_offset)):
         if i != 0  and i != index_to_skip:
-          if parts_last_offset[i] < (current_measure * full_measure - full_measure):
-            parts_last_offset[i] = current_measure * full_measure - full_measure
+          if parts_next_offset[index_to_skip] > parts_next_offset[i]:
+            parts_next_offset[i] = parts_next_offset[index_to_skip]
+          else:
+            parts_next_offset[i] = parts_next_offset[i]
+
+    event[0] = parts_next_offset[int(event[2][-1])]
+    
+    parts_next_offset[int(event[2][-1])] = event[0] + parts_next_duration[int(event[2][-1])]
+    parts_next_duration[int(event[2][-1])] = event[3]
 
     previous_measure = current_measure
 

@@ -407,6 +407,27 @@ def _rejoin_tuplets(whole_piece):
 def _adjust_output(sonate):
 
   for event in sonate:
+    if 'Tuplet' in event[1]:
+      for tuplet in event[3]:
+        if tuplet[2] == 0 and tuplet[0] != 'Rest':
+          tuplet[0] = 'Rest'
+        if tuplet[2] != 0 and tuplet[0] == 'Rest':
+          tuplet[0] = 'Note'
+        if tuplet[0] == 'Chord':
+          tuplet[2] = list(sorted(set(tuplet[2])))
+          if 0 in tuplet[2]:
+            if tuplet[2] == [0]:
+              tuplet[0] = 'Rest'
+              tuplet[2] = 0
+              continue
+            else:
+              tuplet[2].remove(0)
+          if len(tuplet[2]) == 1:
+            tuplet[0] = 'Note'
+            tuplet[2] = tuplet[2][0]
+
+      continue
+
     if event[4] == 0 and event[1] != 'Rest':
       event[1] = 'Rest'
     if event[4] != 0 and event[1] == 'Rest':
@@ -425,6 +446,41 @@ def _adjust_output(sonate):
         event[4] = event[4][0]
 
   return sonate
+
+def _adjust_joined_tuplets(sonate):
+  adjusted_sonate = []
+  for event in sonate:
+    if 'Tuplet' in event[1]:
+      notes = event[1].split()[1]
+      how_many_notes = int(notes.split(':')[0])
+
+      if len(event[3]) < how_many_notes:
+        while len(event[3]) < how_many_notes:
+          event[3].append(event[3][-1])
+        adjusted_sonate.append(event)
+      elif len(event[3]) == how_many_notes:
+        adjusted_sonate.append(event)
+      elif len(event[3]) > how_many_notes:
+        temp_tuplets = []
+
+        for i in range(0,len(event[3]), how_many_notes):
+          temp_tuplets.append(event[3][i:i+how_many_notes])
+
+        temp_event = []
+        for tup in temp_tuplets:
+          if len(tup) < how_many_notes:
+            while len(tup) < how_many_notes:
+              tup.append(tup[-1])
+            temp_event = [event[0], event[1], event[2], tup]
+          elif len(tup) == how_many_notes:
+            temp_event = [event[0], event[1], event[2], tup]
+                  
+          adjusted_sonate.append(temp_event)
+
+    else:
+      adjusted_sonate.append(event)
+
+  return adjusted_sonate
 
 def _order_offsets(sonate):
   parts_next_offset = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
@@ -448,7 +504,11 @@ def _order_offsets(sonate):
 
     event[0] = parts_next_offset[int(event[2][-1])]
     
-    parts_next_duration[int(event[2][-1])] = event[3]
+    if 'Tuplet' in event[1]:
+      parts_next_duration[int(event[2][-1])] = event[3][0][1]
+
+    else:
+      parts_next_duration[int(event[2][-1])] = event[3]
     parts_next_offset[int(event[2][-1])] = event[0] + parts_next_duration[int(event[2][-1])]
 
     previous_measure = current_measure
@@ -489,7 +549,8 @@ def rebuild_piece(sonate):
   #print(no_header_list)
   #print()
 
-  adjusted_list = _adjust_output(no_header_list)
+  halfway_adjusted_list = _adjust_output(no_header_list)
+  adjusted_list = _adjust_joined_tuplets(halfway_adjusted_list)
   ordered_adjusted_list = _order_offsets(adjusted_list)
 
   #print('This is the adjusted sonate ')

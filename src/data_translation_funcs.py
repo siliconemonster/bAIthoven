@@ -482,7 +482,7 @@ def _adjust_joined_tuplets(sonate):
 
   return adjusted_sonate
 
-def _order_offsets(sonate):
+def _adjust_offset_order(sonate):
   parts_next_offset = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
   parts_next_duration = ['empty', Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1), Fraction(0,1)]
   full_measure = Fraction(4,1)
@@ -551,7 +551,7 @@ def rebuild_piece(sonate):
 
   halfway_adjusted_list = _adjust_output(no_header_list)
   adjusted_list = _adjust_joined_tuplets(halfway_adjusted_list)
-  ordered_adjusted_list = _order_offsets(adjusted_list)
+  ordered_adjusted_list = _adjust_offset_order(adjusted_list)
 
   #print('This is the adjusted sonate ')
   #print(ordered_adjusted_list)

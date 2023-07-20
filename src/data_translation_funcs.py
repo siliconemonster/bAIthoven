@@ -505,7 +505,9 @@ def _adjust_offset_order(sonate):
     event[0] = parts_next_offset[int(event[2][-1])]
     
     if 'Tuplet' in event[1]:
-      parts_next_duration[int(event[2][-1])] = event[3][0][1]
+      tuplet_info = event[1].split()
+      total = int(tuplet_info[1][-1])
+      parts_next_duration[int(event[2][-1])] = Fraction(event[3][0][1] * total)
 
     else:
       parts_next_duration[int(event[2][-1])] = event[3]

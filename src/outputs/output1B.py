@@ -1,3 +1,4 @@
+# arquitetura: batch de 512, 3 camadas "relu" 1 camada "softmax", 200 épocas
 from fractions import Fraction
 
 output = [[Fraction(0, 1), 'Tempo', '120.0'],
